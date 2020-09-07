@@ -10,8 +10,9 @@ html {
   font-weight: bold;
 }
 .navbar {
-  color: black;
-  background: transparent
+  padding-left: 0;
+  /* color: black; */
+  /* background: transparent
     linear-gradient(
       0deg,
       #ffffff 0%,
@@ -20,8 +21,13 @@ html {
       #dcedff 81%,
       #c9e4ff 100%
     )
-    0% 0% no-repeat padding-box !important;
+    0% 0% no-repeat padding-box !important; */
 }
+#navbarList li {
+  border-bottom: 2px solid white;
+  padding: 5px;
+}
+
 main > .container {
   padding: 60px 15px 0;
   /* margin-bottom: 20px; */
@@ -236,6 +242,11 @@ img .show {
   }
 }
 @media (max-width: 760px) {
+  #navbarSupportedContent {
+    background-color: rgba(29 30 39 / 93%);
+    height: 100vh;
+    padding-left: 1rem;
+  }
   #game {
     margin-top: 0;
   }
