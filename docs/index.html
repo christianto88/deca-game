@@ -32,7 +32,7 @@
     </style>
 </head>
 
-<body>
+<body class="d-flex flex-column">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -48,54 +48,60 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                style="border: none;">
-                <span class="navbar-toggler-icon"></span>
+                style="border: none;color:white">
+                <span class="navbar-toggler-icon" style="color:white"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div id="content">
                     <ul class="navbar-nav mr-auto" id="navbarList">
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="index.html">Match & Win </a>
+                            <a class="nav-link white-text" href="index.html">Match & Win </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="instructions.html">How does it work ?</a>
+                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="prizes.html">Prizes</a>
+                            <a class="nav-link white-text" href="prizes.html">Prizes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="tnc.html">Terms and Conditions</a>
+                            <a class="nav-link white-text" href="tnc.html">Terms and Conditions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="contactUs.html">Contact Us</a>
+                            <a class="nav-link white-text" href="contactUs.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>
 
-                <div style="text-align: center;color:white;height:150px;">
+                <div id="dropdownFooter" style="visibility: hidden;">
                     <div>
                         Stay Connected
 
                     </div>
                     <div>
                         <ul class="nav justify-content-center">
-                            <li class="nav-item">
+                            <li class="nav-item" style="margin:10px">
                                 <a href="#">
                                     <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image"
-                                        style="height: 40px;">
+                                        >
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" style="margin:10px">
                                 <a href="#">
                                     <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image"
-                                        style="height: 40px;">
+                                        >
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" style="margin:10px">
                                 <a href="#">
                                     <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image"
-                                        style="height: 40px;">
+                                        >
+                                </a>
+                            </li>
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image"
+                                        >
                                 </a>
                             </li>
                         </ul>
@@ -112,53 +118,54 @@
 
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
-        <div class="container">
-            <!-- <div style="position: relative;border:4px solid red"> -->
-            <div id="firstPage" class="row">
-                <div class="col">
+        <div class="container" style="height: 80vh;">
+            <div class="row align-items-center" style="height: 80vh;">
+                <div class="col-lg-6">
                     <div class="text-center">
-                        <img src="./raw/buttons_icons-32.png" class="img-fluid" alt="Responsive image">
+                        <img src="./raw/main-logo.png" class="img-fluid" alt="Responsive image">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="text-center" style="margin-bottom: 20px;">
-                        <h3>Are you ready to test your memory?</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
+                <div class="col-lg-6">
                     <div class="text-center">
-                        <form onsubmit="saveData();return false" method="POST">
-                            <div class="form-group">
-                                <input required placeholder="NAME" type="text" class="form-control myInput" type="text"
-                                    id="name" name="name" style="text-align: center;border-radius: 2rem;">
-                            </div>
-                            <div class="form-group">
-                                <input required type="email" id="emailInput" name="email" placeholder="EMAIL"
-                                    style="text-align: center;border-radius: 2rem" class="form-control myInput">
-                                <div class="invalid-feedback">
-                                    Please provide a valid email.
+                            <h3>Are you ready to challenge your brain?</h3>
+                        <div class="row" style="margin-top: 60px;">
+                            <div class="col">
+                                <div class="text-center">
+                                    <form onsubmit="saveData();return false" method="POST">
+                                        <div class="form-group">
+                                            <input required placeholder="NAME" type="text" class="form-control myInput" type="text"
+                                                id="name" name="name" style="text-align: center;border-radius: 2rem;">
+                                        </div>
+                                        <div class="form-group">
+                                            <input required type="email" id="emailInput" name="email" placeholder="EMAIL"
+                                                style="text-align: center;border-radius: 2rem" class="form-control myInput">
+                                            <div class="invalid-feedback">
+                                                Please provide a valid email.
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn" id="submitBtn">
+                                                <div class="text-center">
+                                                    <img src="./raw/play-button.png" class=" img-fluid" alt="Responsive image">
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn" id="submitBtn">
-                                    <div class="text-center">
-                                        <img src="./raw/play-button.png" class=" img-fluid" alt="Responsive image">
-                                    </div>
-                                </button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                
+            </div>
+           
 
         </div>
     </main>
 
-    <!-- <footer class="footer mt-auto py-3">
+    <footer id="bottomFooter" class="footer mt-auto py-3">
         <div class="container-fluid">
             <div class="row">
                 <div class=" col-lg-4 col-sm-12 col-md-12 justify-content-center" style="place-self:center;">
@@ -181,22 +188,28 @@
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     Stay connected
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     <a href="#">
                                         <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
+                                           >
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     <a href="#">
                                         <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
+                                            >
+                                    </a>
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="#">
+                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image"
+                                            >
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#">
-                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
+                                        <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image"
+                                            >
                                     </a>
                                 </li>
                             </ul>
@@ -208,7 +221,7 @@
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
 
 </body>
 <script>
@@ -218,7 +231,14 @@
 
         if (max700.matches || max1000.matches) {
             let content = document.getElementById('content')
+            let dropdownFooter=document.getElementById("dropdownFooter")
+            let footer=document.getElementById("bottomFooter")
+            footer.style.visibility='hidden'
             content.style.height = `${window.innerHeight - 196}px`
+            dropdownFooter.style.textAlign='center'
+            dropdownFooter.style.color='white'
+            dropdownFooter.style.height='150px'
+            dropdownFooter.style.visibility='visible'
         }
 
         // var xhttp = new XMLHttpRequest();

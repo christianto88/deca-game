@@ -7,11 +7,15 @@ html {
   /* font-weight: "Condensed Bold"; */
   box-sizing: border-box;
 }
-.black-text {
-  color: black;
-  font-weight: bold;
+.white-text {
+  color: white !important;
+  font-weight: bold !important;
 }
 
+/* NAVBAR STYLING */
+a:hover{
+  color:yellow !important
+}
 .navbar {
   padding-left: 0;
   padding-right: 0;
@@ -27,31 +31,24 @@ html {
     )
     0% 0% no-repeat padding-box !important; */
 }
+#content{
+  margin-left: 20px;
+}
+#navbarList li {
+margin-right: 20px;
+}
+
+/* FOOTER STYLING */
+#bottomFooter{
+  background-color:#0F2D55;
+  color:white;
+  font-weight: bold;
+}
 
 main > .container {
   padding: 60px 15px 0;
   /* margin-bottom: 20px; */
 }
-/* .show {
-  visibility: visible !important;
-  opacity: 100 !important;
-} */
-
-.footer {
-  font-family: "CustomFont";
-  background: transparent
-    linear-gradient(
-      0deg,
-      #ffffff 0%,
-      #fbfdff 28%,
-      #eff7ff 55%,
-      #dcedff 81%,
-      #c9e4ff 100%
-    )
-    0% 0% no-repeat padding-box;
-  box-shadow: 0px 10px 30px #3a315175;
-}
-
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -106,12 +103,7 @@ h3 {
   color: white;
   /* font-family: "CustomFont"; */
 }
-footer {
-  color: #787c7f;
-}
-footer .nav-link {
-  color: #787c7f;
-}
+
 /*
  * Styles for the deck of cards
  */
@@ -231,6 +223,9 @@ img .show {
   #navbarSupportedContent {
     background-color: rgba(29 30 39 / 93%);
   }
+  #content{
+    margin-left:0
+  }
 
   .deck .card {
     width: 3.5rem;
@@ -263,6 +258,9 @@ img .show {
   }
   #navbarSupportedContent {
     background-color: rgba(29 30 39 / 93%);
+  }
+  #content{
+    margin-left:0
   }
 
   #game {
