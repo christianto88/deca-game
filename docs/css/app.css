@@ -6,6 +6,7 @@ html {
   font-family: "Roboto";
   /* font-weight: "Condensed Bold"; */
   box-sizing: border-box;
+  overflow: hidden;
 }
 .white-text {
   color: white !important;
@@ -43,6 +44,10 @@ margin-right: 20px;
   background-color:#0F2D55;
   color:white;
   font-weight: bold;
+  width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
 }
 
 main > .container {
@@ -64,7 +69,7 @@ code {
 }
 html,
 body {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   margin: 0;
   padding: 0;
@@ -73,6 +78,7 @@ body {
 }
 body {
   background-image: url("../raw/BG-10.png");
+  /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
   background-size: cover;
 }
 ::placeholder {
@@ -117,9 +123,12 @@ h3 {
 }
 #prizeContainer {
   margin-top: 60px;
+  font-style: italic;
 }
 #instructionContainer {
-  margin-top: 100px;
+  margin-top: 50px;
+  font-size: 32px;
+  font-style: italic;
 }
 
 .deck {
@@ -263,6 +272,13 @@ img .show {
     margin-left:0
   }
 
+/* BODY STYLING */
+body {
+  overflow-y:hidden ;
+  background-image: url("../raw/BG-10-mobile.png");
+  /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
+  
+}
   #game {
     margin-top: 0;
   }
