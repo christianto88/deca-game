@@ -10,7 +10,7 @@ html {
   font-weight: bold;
 }
 #content {
-  min-height: calc(100vh - 215px);
+  min-height: 75vh;
 }
 .navbar {
   padding-left: 0;
