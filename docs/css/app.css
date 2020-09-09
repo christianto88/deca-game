@@ -271,14 +271,11 @@ img .show {
     height: 5rem;
     width: 5rem;
   }
-  #content {
-    min-height: calc(100vh - 190px);
-  }
-  body {
+  /* body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
   }
   html {
     height: -webkit-fill-available;
-  }
+  } */
 }

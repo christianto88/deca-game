@@ -72,7 +72,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="container-fluid" style="place-self:center;text-align: center;color:white;height:150px;">
                     <div class="row">
                         <div class="col">
@@ -216,16 +216,18 @@
     </footer> -->
 
 </body>
-<!-- <script>
+<script>
     document.body.onload = function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://fb-api.ematicsolutions.com/elixus/customers", true);
-        xhttp.send();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == XMLHttpRequest.DONE && this.status !== 200) {
-                alert('Please disable adblock to play this game')
-            }
-        };
+        let content = document.getElementById('content')
+        content.style.height = `${window.innerHeight - 196}px`
+        // var xhttp = new XMLHttpRequest();
+        // xhttp.open("GET", "https://fb-api.ematicsolutions.com/elixus/customers", true);
+        // xhttp.send();
+        // xhttp.onreadystatechange = function () {
+        //     if (this.readyState == XMLHttpRequest.DONE && this.status !== 200) {
+        //         alert('Please disable adblock to play this game')
+        //     }
+        // };
     }
     function saveData() {
         console.log('save')
@@ -239,6 +241,6 @@
         window.location.href = 'game.html'
 
     }
-</script> -->
+</script>
 
 </html>
