@@ -56,19 +56,19 @@
                 <div id="content">
                     <ul class="navbar-nav mr-auto" id="navbarList">
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="prizes.html">Match & Win </a>
+                            <a class="nav-link black-text" href="index.html">Match & Win </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="leaderboard.html">How does it work ?</a>
+                            <a class="nav-link black-text" href="instructions.html">How does it work ?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="index.html">Prices</a>
+                            <a class="nav-link black-text" href="prizes.html">Prizes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="index.html">Terms and Conditions</a>
+                            <a class="nav-link black-text" href="tnc.html">Terms and Conditions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link black-text" href="index.html">Contact Us</a>
+                            <a class="nav-link black-text" href="contactUs.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -134,11 +134,11 @@
                         <form onsubmit="saveData();return false" method="POST">
                             <div class="form-group">
                                 <input required placeholder="NAME" type="text" class="form-control myInput" type="text"
-                                    id="name" name="name">
+                                    id="name" name="name" style="text-align: center;border-radius: 2rem;">
                             </div>
                             <div class="form-group">
                                 <input required type="email" id="emailInput" name="email" placeholder="EMAIL"
-                                    class="form-control myInput">
+                                    style="text-align: center;border-radius: 2rem" class="form-control myInput">
                                 <div class="invalid-feedback">
                                     Please provide a valid email.
                                 </div>
@@ -146,7 +146,7 @@
                             <div class="text-center">
                                 <button type="submit" class="btn" id="submitBtn">
                                     <div class="text-center">
-                                        <img src="./raw/buttons_icons-12.png" class=" img-fluid" alt="Responsive image">
+                                        <img src="./raw/play-button.png" class=" img-fluid" alt="Responsive image">
                                     </div>
                                 </button>
                             </div>
@@ -219,7 +219,6 @@
         if (max700.matches || max1000.matches) {
             let content = document.getElementById('content')
             content.style.height = `${window.innerHeight - 196}px`
-            content.style.border = '2px solid red'
         }
 
         // var xhttp = new XMLHttpRequest();

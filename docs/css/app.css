@@ -1,8 +1,10 @@
-@font-face {
-  font-family: "CustomFont";
+/* @font-face {
+  font-family: "Robot";
   src: url("../PoetsenOne-Regular.ttf");
-}
+} */
 html {
+  font-family: "Roboto";
+  /* font-weight: "Condensed Bold"; */
   box-sizing: border-box;
 }
 .black-text {
@@ -73,7 +75,6 @@ body {
   /* overflow-x: hidden; */
 }
 body {
-  font-family: "CustomFont";
   background-image: url("../raw/BG-10.png");
   background-size: cover;
 }
@@ -283,11 +284,4 @@ img .show {
     height: 5rem;
     width: 5rem;
   }
-  /* body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-  html {
-    height: -webkit-fill-available;
-  } */
 }
