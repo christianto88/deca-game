@@ -9,8 +9,8 @@ html {
   color: black;
   font-weight: bold;
 }
-#content{
-  min-height: calc(100vh - 196px);
+#content {
+  min-height: calc(100vh - 175px);
 }
 .navbar {
   padding-left: 0;
@@ -27,8 +27,8 @@ html {
     )
     0% 0% no-repeat padding-box !important; */
 }
-.navbar-collapse{
-  padding:0 1rem;
+.navbar-collapse {
+  padding: 0 1rem;
 }
 #navbarList li {
   border-bottom: 2px solid white;
