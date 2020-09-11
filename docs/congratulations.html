@@ -15,7 +15,7 @@
 
 
     <style>
-        .bd-placeholder-img {
+        /* .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
             -webkit-user-select: none;
@@ -28,6 +28,16 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
+        } */
+        @media (max-width: 760px) {
+            .myImg {
+                width: 150px;
+            }
+        }
+
+        body {
+            background-image: url("./raw/BG-instruction.png");
+            background-size: cover;
         }
     </style>
 </head>
@@ -43,92 +53,92 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 
-        <header>
-            <!-- Fixed navbar -->
-            <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    style="border: none;">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div id="content">
-                        <ul class="navbar-nav mr-auto" id="navbarList">
-                            <li class="nav-item">
-                                <a class="nav-link black-text" href="index.html">Match & Win </a>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                style="border: none;color:white">
+                <span class="navbar-toggler-icon" style="color:white"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div id="content">
+                    <ul class="navbar-nav mr-auto" id="navbarList">
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="index.html">Match & Win </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="prizes.html">Prizes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="tnc.html">Terms and Conditions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="contactUs.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="dropdownFooter" style="visibility: hidden;">
+                    <div>
+                        Stay Connected
+
+                    </div>
+                    <div>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link black-text" href="instructions.html">How does it work ?</a>
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link black-text" href="prizes.html">Prizes</a>
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link black-text" href="tnc.html">Terms and Conditions</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link black-text" href="contactUs.html">Contact Us</a>
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
+                                </a>
                             </li>
                         </ul>
                     </div>
-    
-                    <div style="text-align: center;color:white;height:150px;">
-                        <div>
-                            Stay Connected
-    
-                        </div>
-                        <div>
-                            <ul class="nav justify-content-center">
-                                <li class="nav-item">
-                                    <a href="#">
-                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#">
-                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#">
-                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            Copyright &copy; ABC All right reserved
-    
-                        </div>
+                    <div>
+                        Copyright &copy; ABC All right reserved
+
                     </div>
-    
                 </div>
-            </nav>
-        </header>
+
+            </div>
+        </nav>
+    </header>
 
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <!-- <div style="position: relative;border:4px solid red"> -->
-
             <div id="instructions" style="color: white">
-
                 <div class="text-center">
-                    <img src="./raw/Mask Group 4.png" class=" img-fluid" alt="Responsive image">
+                    <img src="./raw/decathlon.png" class=" img-fluid" alt="Responsive image">
+
+                </div>
+                <div class="text-center">
+                    <img src="./raw/trophy.png" class=" img-fluid" alt="Responsive image">
 
                 </div>
                 <div class="row justify-content-center">
                     <div id="col">
-                        <img src="./raw/buttons_icons-14.png" class=" img-fluid" alt="Responsive image"><span
-                            class="moves" style="color: white;">0</span> Move(s)
-                    </div>
-                    <div id="col">
-                        <img src="./raw/buttons_icons-13.png" class=" img-fluid" alt="Responsive image"><span
-                            class="timer" style="color: white;">0</span>
+                        <img src="./raw/timer.png" class=" img-fluid" alt="Responsive image">
+                        <span style="margin-left: 20px; font-weight: bold;" class="timer" style="color: white;">0H 0M
+                            0S</span>
                     </div>
 
                 </div>
@@ -147,38 +157,94 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col">
-                        <div class="text-center">
+                    <div class="col-6">
+                        <div class="text-right">
                             <a href="prizes.html">
-                                <img src="./raw/share-fb.png" class=" img-fluid" alt="Responsive image">
+                                <img src="./raw/view-prize.png" class=" img-fluid" alt="Responsive image">
                             </a>
                         </div>
 
 
                     </div>
-                    <div class="col">
-                        <div class="text-center">
+                    <div class="col-6">
+                        <div class="text-left">
                             <a href="index.html">
-                                <img src="./raw/buttons_icons-24.png" class=" img-fluid" alt="Responsive image">
+                                <img src="./raw/play-again.png" class=" img-fluid" alt="Responsive image">
                             </a>
                         </div>
 
 
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <div class="text-center">
                             <a href="prizes.html">
-                                <img src="./raw/view-prizes.png" class=" img-fluid" alt="Responsive image">
+                                <img src="./raw/share-button.png" class=" img-fluid" alt="Responsive image">
                             </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <footer id="bottomFooter" class="footer mt-auto py-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-lg-4 col-sm-12 col-md-12 justify-content-center" style="place-self:center;">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link">Terms and condition</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-12  nav-link" style="place-self:center;text-align: center;">
+                    Copyright &copy; ABC All right reserved
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-12 nav-link" style="padding:0">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-md-12">
+                            <ul class="nav justify-content-center">
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    Stay connected
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="#">
+                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="#">
+                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="#">
+                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">
+                                        <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
 
                     </div>
 
                 </div>
             </div>
-
         </div>
-    </main>
+    </footer>
 
 </body>
 <script>
@@ -196,10 +262,23 @@
     };
     document.body.onload = function () {
         let query = getParams(window.location.href)
-        let moves = document.querySelector('.moves')
-        moves.innerHTML = query.moves
         let timer = document.querySelector('.timer')
         timer.innerHTML = query.timer
+
+        let max700 = window.matchMedia("(max-width: 700px)")
+        let max1000 = window.matchMedia("(max-width: 1000px)")
+
+        if (max700.matches || max1000.matches) {
+            let content = document.getElementById('content')
+            let dropdownFooter = document.getElementById("dropdownFooter")
+            let footer = document.getElementById("bottomFooter")
+            footer.style.visibility = 'hidden'
+            content.style.height = `${window.innerHeight - 196}px`
+            dropdownFooter.style.textAlign = 'center'
+            dropdownFooter.style.color = 'white'
+            dropdownFooter.style.height = '150px'
+            dropdownFooter.style.visibility = 'visible'
+        }
     }
 </script>
 

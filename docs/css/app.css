@@ -39,6 +39,12 @@ a:hover{
 margin-right: 20px;
 }
 
+#instruction{
+  font-size: 32px;
+}
+#question{
+  font-size: 32px;
+}
 /* FOOTER STYLING */
 #bottomFooter{
   background-color:#0F2D55;
@@ -116,7 +122,12 @@ h3 {
 #game {
   text-align: center;
   overflow: auto;
-  margin-top: 100px;
+  margin-top: 60px;
+}
+#questionGame{
+  visibility: hidden;
+  left: 20%;
+  right: 20%;
 }
 #leaderboardContainer {
   margin-top: 100px;
@@ -130,7 +141,27 @@ h3 {
   font-size: 32px;
   font-style: italic;
 }
+#cardGameNext{
+  opacity: 0.2;
+}
+#questionGameNext{
+  opacity: 0.2;
+}
 
+.questionButton{
+  border:5px solid white;
+  border-radius:20px
+}
+.myImg{
+  margin-bottom: 10px;
+  border:4px solid white;
+  border-radius: 20px;
+}
+.gameImg{
+  margin-bottom: 10px;
+  border:4px solid white;
+  border-radius: 20px;
+}
 .deck {
   padding: 1rem;
   border-radius: 4px;
@@ -255,6 +286,12 @@ img .show {
   #instructionContainer {
     margin-top: 0;
   }
+  #instruction{
+    font-size: 16px;
+  }
+  #question{
+    font-size: 16px;
+  }
 }
 @media (max-width: 760px) {
   /* NAVBAR STYLING */
@@ -278,6 +315,12 @@ body {
   background-image: url("../raw/BG-10-mobile.png");
   /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
   
+}
+#instruction{
+  font-size: 16px;
+}
+#question{
+  font-size: 16px;
 }
   #game {
     margin-top: 0;

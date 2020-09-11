@@ -29,6 +29,17 @@
                 font-size: 3.5rem;
             }
         }
+
+        @media (max-width: 760px) {
+            .myImg {
+                height: 120px
+            }
+        }
+
+        body {
+            background-image: url("./raw/BG-instruction.png");
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -47,25 +58,69 @@
 
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-            <a class="navbar-brand" href="instructions.html">How Does it work?</a>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                style="border: none;color:white">
+                <span class="navbar-toggler-icon" style="color:white"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link black-text" href="prizes.html">Prizes </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link black-text" href="leaderboard.html">Leaderboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link black-text" href="index.html">ABC Fun Club</a>
-                    </li>
-                </ul>
+                <div id="content">
+                    <ul class="navbar-nav mr-auto" id="navbarList">
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="index.html">Match & Win </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="prizes.html">Prizes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="tnc.html">Terms and Conditions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="contactUs.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="dropdownFooter" style="visibility: hidden;">
+                    <div>
+                        Stay Connected
+
+                    </div>
+                    <div>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                                </a>
+                            </li>
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                                </a>
+                            </li>
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
+                                </a>
+                            </li>
+                            <li class="nav-item" style="margin:10px">
+                                <a href="#">
+                                    <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        Copyright &copy; ABC All right reserved
+
+                    </div>
+                </div>
+
             </div>
         </nav>
     </header>
@@ -73,91 +128,147 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container" id="game" style="color: white;">
-            <!-- <div class="row">
-                <div class="col">
-                    <div class="text-center">
-                        <img src="./raw/buttons_icons-32.png" class=" img-fluid myImg" alt="Responsive image">
-                    </div>
-                </div>
-
-            </div> -->
-            <div class="row justify-content-between" style="margin-top:10px">
-                <div id="col">
-                    <img src="./raw/buttons_icons-14.png" class=" img-fluid" alt="Responsive image"><span class="moves"
-                        style="color: white;">0</span> Move(s)
-                </div>
-                <div id="col">
-                    <img src="./raw/buttons_icons-13.png" class=" img-fluid" alt="Responsive image"><span
-                        style="margin-right: 10px;" class="timer" style="color: white;">0</span>
+            <div class="row justify-content-between">
+                <div class="col"></div>
+                <div class="col" style="text-align:end ;">
+                    <img src="./raw/timer.png" class=" img-fluid" alt="Responsive image">
+                    <span style="margin-left: 20px; font-weight: bold;" class="timer" style="color: white;">0H 0M
+                        0S</span>
                 </div>
 
 
             </div>
-
             <div class="row">
-                <div class="deck col-lg-12">
-                    <div class="row justify-content-center" id="card-deck">
+                <div class="col-12">
+                    <div class="text-center">
+                        <img id="brandLogo" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row position-fixed" id="questionGame">
+                <div class="col-12">
+                    <div class="text-center">
+                        <p style="margin-bottom: 20px; text-transform: capitalize" id="question"></p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="text-right">
+                        <img onClick="questionButtonClick(this,true)" src="./raw/true.png" class=" img-fluid gameImg" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="text-left">
+                        <img onClick="questionButtonClick(this,false)" src="./raw/false.png" class=" img-fluid gameImg" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-12 justify-content-center">
+                    <div class="text-center" id="questionGameNext">
+                        <img onClick='next()' src="./raw/next-button.png" class=" img-fluid" alt="Responsive image">
                     </div>
                 </div>
             </div>
 
-            <div class="row justify-content-center">
-                <div class="col" style="text-align: right;place-self: center;">Score to beat</div>
-                <div class="col" style="text-align: left; ">
-                    <img src="./raw/buttons_icons-14.png" class=" img-fluid" alt="Responsive image"><span
-                        class="scoreToBeat" style="color: white;">0</span>
-                    Move(s)
+            <div class="row mb-4" id="matchGame">
+                <div class="col-12 mb-2">
+                    <div class="text-center">
+                        <p style="color: yellow;text-transform: capitalize;font-weight: bolder ;" id="instruction">
+                    </div>
                 </div>
-                <div class="col" style="text-align: left; ">
-                    <img src=" ./raw/buttons_icons-13.png" class=" img-fluid" alt="Responsive image"><span
-                        class="timeToBeat" style="color: white;">0</span>
 
+                <div class="col-lg-4 col-6">
+                    <div class="text-center" id="image1">
+                    </div>
                 </div>
+                <div class="col-lg-4 col-6">
+                    <div class="text-center" id="image2">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <div class="text-center" id="image3">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <div class="text-center" id="image4">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="text-center" id="image5">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <div class="text-center" id="image6">
+                    </div>
+                </div>
+                <div class="col-12 justify-content-center">
+                    <div class="text-center" id="matchGameNext">
+                        <img onClick='next()' src="./raw/next-button.png" class=" img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- <div class="row justify-content-center">
+            <div class="col" style="text-align: right;place-self: center;">Score to beat</div>
+            <div class="col" style="text-align: left; ">
+                <img src="./raw/buttons_icons-14.png" class=" img-fluid" alt="Responsive image"><span
+                    class="scoreToBeat" style="color: white;">0</span>
+                Move(s)
+            </div>
+            <div class="col" style="text-align: left; ">
+                <img src=" ./raw/buttons_icons-13.png" class=" img-fluid" alt="Responsive image"><span
+                    class="timeToBeat" style="color: white;">0</span>
 
             </div>
+
+        </div> -->
         </div>
         </div>
     </main>
 
-    <footer class="footer mt-auto py-3">
+    <footer id="bottomFooter" class="footer mt-auto py-3">
         <div class="container-fluid">
             <div class="row">
                 <div class=" col-lg-4 col-sm-12 col-md-12 justify-content-center" style="place-self:center;">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Terms and condition</a>
+                            <a class="nav-link">Terms and condition</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Contact Us</a>
+                            <a class="nav-link">Contact Us</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-12 col-md-12  nav-link" style="place-self:center;text-align: center;">
                     Copyright &copy; ABC All right reserved
                 </div>
-                <div class="col-lg-4 col-sm-12 col-md-12 nav-link " style="padding:0">
+                <div class="col-lg-4 col-sm-12 col-md-12 nav-link" style="padding:0">
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-md-12">
                             <ul class="nav justify-content-center">
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     Stay connected
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     <a href="#">
-                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
+                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="#">
+                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="#">
+                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#">
-                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#">
-                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image"
-                                            style="height: 40px;">
+                                        <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                             </ul>
@@ -172,12 +283,5 @@
     </footer>
 
 </body>
-<style>
-    @media (max-width: 760px) {
-        .myImg {
-            height: 120px
-        }
-    }
-</style>
 
 </html>
