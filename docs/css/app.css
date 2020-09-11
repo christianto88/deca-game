@@ -311,7 +311,7 @@ img .show {
 
 /* BODY STYLING */
 body {
-  overflow-y:hidden ;
+  overflow-y:scroll ;
   background-image: url("../raw/BG-10-mobile.png");
   /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
   
