@@ -15,20 +15,6 @@
 
 
     <style>
-        /* .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        } */
         @media (max-width: 760px) {
             .myImg {
                 width: 150px;
@@ -38,6 +24,7 @@
         body {
             background-image: url("./raw/BG-instruction.png");
             background-size: cover;
+            color: white;
         }
     </style>
 </head>
@@ -69,17 +56,12 @@
                             <a class="nav-link white-text" href="index.html">Match & Win </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link white-text" href="prizes.html">Prizes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="tnc.html">Terms and Conditions</a>
+                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link white-text" href="contactUs.html">Contact Us</a>
-                        </li>
+
                     </ul>
                 </div>
 
@@ -125,68 +107,74 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <div id="instructions" style="color: white">
-                <div class="text-center">
-                    <img src="./raw/decathlon.png" class=" img-fluid" alt="Responsive image">
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        <img src="./raw/decathlon.png" class=" img-fluid" alt="Responsive image">
 
+                    </div>
                 </div>
-                <div class="text-center">
-                    <img src="./raw/trophy.png" class=" img-fluid" alt="Responsive image">
 
-                </div>
-                <div class="row justify-content-center">
-                    <div id="col">
+            </div>
+            <div class="row" style="padding-top: 50px;">
+                <div class="col-12 col-lg-6">
+                    <div class="text-center">
+                        <img src="./raw/trophy.png" class=" img-fluid" alt="Responsive image">
+
+                    </div>
+                    <div class="text-center">
                         <img src="./raw/timer.png" class=" img-fluid" alt="Responsive image">
                         <span style="margin-left: 20px; font-weight: bold;" class="timer" style="color: white;">0H 0M
                             0S</span>
                     </div>
-
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col">
-                        <div class="text-center">
-                            <img src="./raw/congrats1.png" class=" img-fluid" alt="Responsive image">
+                <div class="col-12 col-lg-6">
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <div class="text-center">
+                                <img src="./raw/congrats1.png" class=" img-fluid" alt="Responsive image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <img src="./raw/congrats2.png" class=" img-fluid" alt="Responsive image">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-6">
-                        <div class="text-right">
-                            <a href="prizes.html">
-                                <img src="./raw/view-prize.png" class=" img-fluid" alt="Responsive image">
-                            </a>
-                        </div>
-
-
-                    </div>
-                    <div class="col-6">
-                        <div class="text-left">
-                            <a href="index.html">
-                                <img src="./raw/play-again.png" class=" img-fluid" alt="Responsive image">
-                            </a>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="text-center">
-                            <a href="prizes.html">
-                                <img src="./raw/share-button.png" class=" img-fluid" alt="Responsive image">
-                            </a>
+                        <div class="col">
+                            <div class="text-center">
+                                <img src="./raw/congrats2.png" class=" img-fluid" alt="Responsive image">
+                            </div>
                         </div>
 
                     </div>
                 </div>
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col-6 col-lg-4">
+                    <div class="text-right">
+                        <a href="prizes.html">
+                            <img src="./raw/view-prize.png" class=" img-fluid" alt="Responsive image">
+                        </a>
+                    </div>
+
+
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="text-center">
+                        <a href="index.html">
+                            <img src="./raw/play-button.png" class=" img-fluid" alt="Responsive image">
+                        </a>
+                    </div>
+
+
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="text-left">
+                        <a href="#">
+                            <img src="./raw/share-button.png" class=" img-fluid" alt="Responsive image">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
 
         </div>
     </main>
