@@ -190,6 +190,7 @@ function resetGame() {
     let questionElement = document.getElementById("question");
     questionElement.innerHTML = selectedQuestion;
     brandLogo.src = `./raw/guess-logo.png`;
+    brandLogo.style.height = "150px";
     questionGame.style.visibility = "visible";
     matchGame.style.visibility = "hidden";
   }
