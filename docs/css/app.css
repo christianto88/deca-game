@@ -6,16 +6,28 @@ html {
   font-family: "Roboto";
   /* font-weight: "Condensed Bold"; */
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: scroll;
+  /* width: 100%; */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  /* overflow-x: hidden; */
 }
 .white-text {
   color: white !important;
   font-weight: bold !important;
 }
-
+body {
+  height: 100%;
+  background-image: url("../raw/BG-10.png");
+  /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
+  background-size: cover;
+  overflow: hidden;
+}
 /* NAVBAR STYLING */
-a:hover{
-  color:yellow !important
+a:hover {
+  color: yellow !important;
 }
 .navbar {
   padding-left: 0;
@@ -32,28 +44,28 @@ a:hover{
     )
     0% 0% no-repeat padding-box !important; */
 }
-#content{
+#content {
   margin-left: 20px;
 }
 #navbarList li {
-margin-right: 20px;
+  margin-right: 20px;
 }
 
-#instruction{
+#instruction {
   font-size: 32px;
 }
-#question{
+#question {
   font-size: 32px;
 }
 /* FOOTER STYLING */
-#bottomFooter{
-  background-color:#0F2D55;
-  color:white;
+#bottomFooter {
+  background-color: #0f2d55;
+  color: white;
   font-weight: bold;
   width: 100%;
-    width: -moz-available;          /* WebKit-based browsers will ignore this. */
-    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-    width: fill-available;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
 }
 
 main > .container {
@@ -73,20 +85,7 @@ code {
 *::after {
   box-sizing: inherit;
 }
-html,
-body {
-  /* width: 100%; */
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  /* overflow: hidden; */
-  /* overflow-x: hidden; */
-}
-body {
-  background-image: url("../raw/BG-10.png");
-  /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
-  background-size: cover;
-}
+
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
@@ -124,7 +123,7 @@ h3 {
   overflow: auto;
   margin-top: 60px;
 }
-#questionGame{
+#questionGame {
   visibility: hidden;
   left: 20%;
   right: 20%;
@@ -141,23 +140,23 @@ h3 {
   font-size: 32px;
   font-style: italic;
 }
-#cardGameNext{
+#cardGameNext {
   opacity: 0.2;
 }
-#questionGameNext{
+#questionGameNext {
   opacity: 0.2;
 }
 
-.questionButton{
-  border:5px solid white;
-  border-radius:20px
+.questionButton {
+  border: 5px solid white;
+  border-radius: 20px;
 }
-.myImg{
+.myImg {
   margin-bottom: 10px;
 }
-.gameImg{
+.gameImg {
   margin-bottom: 10px;
-  border:4px solid white;
+  border: 4px solid white;
   border-radius: 20px;
 }
 .deck {
@@ -249,7 +248,9 @@ h3 {
 img .show {
   visibility: initial;
 }
-@media (max-width: 1000px) {
+
+/* RESPONSIVE STYLING  */
+ @media (max-width: 1000px) {
   /* NAVBAR STYLING */
   .navbar-collapse {
     padding: 0 1rem;
@@ -261,8 +262,8 @@ img .show {
   #navbarSupportedContent {
     background-color: rgba(29 30 39 / 93%);
   }
-  #content{
-    margin-left:0
+  #content {
+    margin-left: 0;
   }
 
   .deck .card {
@@ -284,10 +285,10 @@ img .show {
   #instructionContainer {
     margin-top: 0;
   }
-  #instruction{
+  #instruction {
     font-size: 16px;
   }
-  #question{
+  #question {
     font-size: 16px;
   }
 }
@@ -303,23 +304,23 @@ img .show {
   #navbarSupportedContent {
     background-color: rgba(29 30 39 / 93%);
   }
-  #content{
-    margin-left:0
+  #content {
+    margin-left: 0;
   }
 
-/* BODY STYLING */
-body {
-  overflow-y:scroll ;
-  background-image: url("../raw/BG-10-mobile.png");
-  /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
-  
-}
-#instruction{
-  font-size: 16px;
-}
-#question{
-  font-size: 16px;
-}
+  /* BODY STYLING */
+  body {
+    /* overflow-y: scroll; */
+    overflow: hidden;
+    background-image: url("../raw/BG-10-mobile.png");
+    /* background: transparent url("../raw/BG-10.png") 0% 0% no-repeat padding-box; */
+  }
+  #instruction {
+    font-size: 16px;
+  }
+  #question {
+    font-size: 16px;
+  }
   #game {
     margin-top: 0;
   }
@@ -339,4 +340,4 @@ body {
     height: 5rem;
     width: 5rem;
   }
-}
+} */

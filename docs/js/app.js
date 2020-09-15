@@ -5,273 +5,298 @@
 // let card = document.getElementsByClassName("card");
 // let cards = [...card];
 // let matchedCard = document.getElementsByClassName("match");
-let scoreData = []
+let scoreData = [];
 let game = document.getElementById("game");
-let moves = 0
-let map = {}
-let p = {}
-let iv
+let moves = 0;
+let map = {};
+let p = {};
+let iv;
 let k;
-let ft
-let mmo = 0
-let ms = 0
-let mmi = 0
-let mh = 0
-var email = localStorage.getItem('email')
-var name = localStorage.getItem('name')
+let ft;
+let mmo = 0;
+let ms = 0;
+let mmi = 0;
+let mh = 0;
+var email = localStorage.getItem("email");
+var name = localStorage.getItem("name");
 var score;
 let instructions, deck, movesCounter;
 // // @description game timer
 let second = 0,
-    minute = 0;
+  minute = 0;
 hour = 0;
 var timer;
 let interval;
 
-let brands = ['artengo', 'domyos', 'geologic', 'kalenji', 'kipsta', 'nabaiji', 'oxelo', 'perfly', 'pongori', 'quechua', 'subea', 'tarmak']
+let brands = [
+  "artengo",
+  "domyos",
+  "geologic",
+  "kalenji",
+  "kipsta",
+  "nabaiji",
+  "oxelo",
+  "perfly",
+  "pongori",
+  "quechua",
+  "subea",
+  "tarmak"
+];
 // let brands = ['artengo', 'domyos', 'kalenji']
 const QUESTIONS = [
-    "Decathlon creates, designs, and manufactures his own products and has 40 brands each dedicated to one sport.",
-    "You can enjoy free shipping if you buy online at decathlon.my",
-    "Created in 1976 in the northern part of France, Decathlon is now established in 57 countries, including Malaysia since 2016 with 5 stores."
-]
+  "Decathlon creates, designs, and manufactures his own products and has 40 brands each dedicated to one sport.",
+  "You can enjoy free shipping if you buy online at decathlon.my",
+  "Created in 1976 in the northern part of France, Decathlon is now established in 57 countries, including Malaysia since 2016 with 5 stores."
+];
 let keys = {
-    "artengo": [6, 4, 2],
-    "domyos": [2, 3, 6],
-    "geologic": [3, 5, 1],
-    "kalenji": [3, 5, 6],
-    "kipsta": [1, 6, 4],
-    "nabaiji": [1, 5, 2],
-    "oxelo": [2, 4, 6],
-    "perfly": [5, 4, 2],
-    "pongori": [6, 1, 3],
-    "quechua": [3, 2, 6],
-    "subea": [6, 5, 3],
-    "tarmak": [1, 5, 3]
-}
+  artengo: [6, 4, 2],
+  domyos: [2, 3, 6],
+  geologic: [3, 5, 1],
+  kalenji: [3, 5, 6],
+  kipsta: [1, 6, 4],
+  nabaiji: [1, 5, 2],
+  oxelo: [2, 4, 6],
+  perfly: [5, 4, 2],
+  pongori: [6, 1, 3],
+  quechua: [3, 2, 6],
+  subea: [6, 5, 3],
+  tarmak: [1, 5, 3]
+};
 
-let questionGame, matchGame, brandLogo, instruction, selectedBrand, matchNextButton, questionNextButton
-let gameCompleted=false
-let correctAnswer = []
-let questionLeft = 1
+let questionGame,
+  matchGame,
+  brandLogo,
+  instruction,
+  selectedBrand,
+  matchNextButton,
+  questionNextButton;
+let gameCompleted = false;
+let correctAnswer = [];
+let questionLeft = 1;
 function startTimer() {
-    interval = setInterval(async function () {
-        timer.innerHTML = minute + "mins " + second + "secs";
-        second++;
-        ms = cryptoEncrypt(parseInt(cryptoDecrypt(ms), 10) + 1)
+  interval = setInterval(async function () {
+    timer.innerHTML = minute + "mins " + second + "secs";
+    second++;
+    ms = cryptoEncrypt(parseInt(cryptoDecrypt(ms), 10) + 1);
 
-        if (second == 60) {
-            minute++;
-            mmi = cryptoEncrypt(parseInt(cryptoDecrypt(mmi), 10) + 1)
-            ms = cryptoEncrypt(0)
-            second = 0;
-        }
-        if (minute == 60) {
-            mh = cryptoEncrypt(parseInt(cryptoDecrypt(mh), 10) + 1)
-            mmi = cryptoEncrypt(0)
-            hour++;
-            minute = 0;
-        }
-    }, 1000);
+    if (second == 60) {
+      minute++;
+      mmi = cryptoEncrypt(parseInt(cryptoDecrypt(mmi), 10) + 1);
+      ms = cryptoEncrypt(0);
+      second = 0;
+    }
+    if (minute == 60) {
+      mh = cryptoEncrypt(parseInt(cryptoDecrypt(mh), 10) + 1);
+      mmi = cryptoEncrypt(0);
+      hour++;
+      minute = 0;
+    }
+  }, 1000);
 }
 function cryptoEncrypt(string) {
-    return CryptoJS.AES.encrypt(string.toString(), "7c3f7400993e1c1e6ef80f0906c0966f").toString()
+  return CryptoJS.AES.encrypt(
+    string.toString(),
+    "7c3f7400993e1c1e6ef80f0906c0966f"
+  ).toString();
 }
 
 function cryptoDecrypt(string) {
-    return CryptoJS.AES.decrypt(string, "7c3f7400993e1c1e6ef80f0906c0966f").toString(CryptoJS.enc.Utf8)
+  return CryptoJS.AES.decrypt(
+    string,
+    "7c3f7400993e1c1e6ef80f0906c0966f"
+  ).toString(CryptoJS.enc.Utf8);
 }
 
 function getBrand() {
-    if (questionLeft > 0) {
-        const index = Math.floor(Math.random() * brands.length)
-        return brands.splice(index, 1)[0]
-    } else {
-        return false
-    }
+  if (questionLeft > 0) {
+    const index = Math.floor(Math.random() * brands.length);
+    return brands.splice(index, 1)[0];
+  } else {
+    return false;
+  }
 }
 
 document.body.onload = async function () {
-    // SET RESPONSIVE
-    let max700 = window.matchMedia("(max-width: 700px)")
-    let max1000 = window.matchMedia("(max-width: 1000px)")
-    if (max700.matches || max1000.matches) {
-        let content = document.getElementById('content')
-        let dropdownFooter = document.getElementById("dropdownFooter")
-        let footer = document.getElementById("bottomFooter")
-        footer.style.visibility = 'hidden'
-        content.style.height = `${window.innerHeight - 196}px`
-        dropdownFooter.style.textAlign = 'center'
-        dropdownFooter.style.color = 'white'
-        dropdownFooter.style.height = '150px'
-        dropdownFooter.style.visibility = 'visible'
-    }
+  // SET RESPONSIVE
+  let max700 = window.matchMedia("(max-width: 700px)");
+  let max1000 = window.matchMedia("(max-width: 1000px)");
+  if (max700.matches || max1000.matches) {
+    let content = document.getElementById("content");
+    let dropdownFooter = document.getElementById("dropdownFooter");
+    let footer = document.getElementById("bottomFooter");
+    footer.style.visibility = "hidden";
+    content.style.height = `${window.innerHeight - 196}px`;
+    dropdownFooter.style.textAlign = "center";
+    dropdownFooter.style.color = "white";
+    dropdownFooter.style.height = "150px";
+    dropdownFooter.style.visibility = "visible";
+  }
 
-    matchGame = document.getElementById('matchGame')
-    questionGame = document.getElementById('questionGame')
-    brandLogo = document.getElementById('brandLogo')
-    instruction = document.getElementById('instruction')
-    matchNextButton = document.getElementById("matchGameNext")
-    questionNextButton = document.getElementById("questionGameNext")
+  matchGame = document.getElementById("matchGame");
+  questionGame = document.getElementById("questionGame");
+  brandLogo = document.getElementById("brandLogo");
+  instruction = document.getElementById("instruction");
+  matchNextButton = document.getElementById("matchGameNext");
+  questionNextButton = document.getElementById("questionGameNext");
 
-    initGame();
-    resetGame()
-}
+  initGame();
+  resetGame();
+};
 
 async function initGame() {
-    // encrypt moves and timer data
-    mmo = await cryptoEncrypt(mmo.toString())
-    ms = await cryptoEncrypt(ms.toString())
-    mmi = await cryptoEncrypt(mmi.toString())
-    mh = await cryptoEncrypt(mh.toString())
+  // encrypt moves and timer data
+  mmo = await cryptoEncrypt(mmo.toString());
+  ms = await cryptoEncrypt(ms.toString());
+  mmi = await cryptoEncrypt(mmi.toString());
+  mh = await cryptoEncrypt(mh.toString());
 
-    // reset moves
-    moves = 0;
+  // reset moves
+  moves = 0;
 
-    //reset timer
-    second = 0;
-    minute = 0;
-    hour = 0;
-    timer = document.querySelector(".timer");
-    timer.innerHTML = "0 mins 0 secs";
-    clearInterval(interval);
+  //reset timer
+  second = 0;
+  minute = 0;
+  hour = 0;
+  timer = document.querySelector(".timer");
+  timer.innerHTML = "0 mins 0 secs";
+  clearInterval(interval);
 }
 
 function resetGame() {
-    correctAnswer = []
-    selectedBrand = getBrand()
-    matchNextButton.style.opacity = 0.2
-    questionNextButton.style.opacity = 0.2
+  correctAnswer = [];
+  selectedBrand = getBrand();
+  matchNextButton.style.opacity = 0.2;
+  questionNextButton.style.opacity = 0.2;
 
-    if (selectedBrand) {
-        brandLogo.src = `./raw/${selectedBrand}/brand-logo.png`
-        instruction.innerHTML = `MATCH THREE (3) IMAGES WITH THE BRAND ${selectedBrand.toUpperCase()}`
-        for (let i = 1; i < 7; i++) {
-            const div = document.getElementById(`image${i}`)
-            if (div.childNodes.length > 1) {
-                div.removeChild(div.childNodes[1])
-            }
-            let img = document.createElement("img");
-            img.src = `./raw/${selectedBrand}/${i}.png`
-            img.classList.add('img-fluid')
-            img.classList.add('gameImg')
-            img.setAttribute("type", i.toString())
-            img.addEventListener('click', imageSelected)
-            div.appendChild(img)
-        }
-    } else {
-        const selectedQuestion = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)]
-        let questionElement = document.getElementById('question')
-        questionElement.innerHTML = selectedQuestion
-        brandLogo.src = `./raw/guess-logo.png`
-        questionGame.style.visibility = 'visible'
-        matchGame.style.visibility = 'hidden'
-
+  if (selectedBrand) {
+    brandLogo.src = `./raw/${selectedBrand}/brand-logo.png`;
+    instruction.innerHTML = `MATCH THREE (3) IMAGES WITH THE BRAND ${selectedBrand.toUpperCase()}`;
+    for (let i = 1; i < 7; i++) {
+      const div = document.getElementById(`image${i}`);
+      if (div.childNodes.length > 1) {
+        div.removeChild(div.childNodes[1]);
+      }
+      let img = document.createElement("img");
+      img.src = `./raw/${selectedBrand}/${i}.png`;
+      img.classList.add("img-fluid");
+      img.classList.add("gameImg");
+      img.setAttribute("type", i.toString());
+      img.addEventListener("click", imageSelected);
+      div.appendChild(img);
     }
-
+  } else {
+    const selectedQuestion =
+      QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
+    let questionElement = document.getElementById("question");
+    questionElement.innerHTML = selectedQuestion;
+    brandLogo.src = `./raw/guess-logo.png`;
+    questionGame.style.visibility = "visible";
+    matchGame.style.visibility = "hidden";
+  }
 }
 function next() {
-    if(gameCompleted){
-congratulations()
-    }else{
-        if (correctAnswer.length === 3) {
-            resetGame()
-        }
+  if (gameCompleted) {
+    congratulations();
+  } else {
+    if (correctAnswer.length === 3) {
+      resetGame();
     }
-    
+  }
 }
 
-function questionButtonClick(t,bool){
-    // console.log(t)
-    if(bool===true){
-        t.style.borderColor='chartreuse'
-        questionNextButton.style.opacity=1
-        gameCompleted=true
-    }else{
-        t.style.borderColor='red'
-    }
+function questionButtonClick(t, bool) {
+  // console.log(t)
+  if (bool === true) {
+    t.style.borderColor = "blue";
+    questionNextButton.style.opacity = 1;
+    gameCompleted = true;
+  } else {
+    t.style.borderColor = "orange";
+  }
 }
 function imageSelected() {
-    if (moves === 0) {
-        second = 0;
-        minute = 0;
-        hour = 0;
-        startTimer();
+  if (moves === 0) {
+    second = 0;
+    minute = 0;
+    hour = 0;
+    startTimer();
+  }
+  moves++;
+  if (
+    correctAnswer.length != 3 &&
+    !correctAnswer.includes(parseInt(this.getAttribute("type"), 10))
+  ) {
+    if (keys[selectedBrand].includes(parseInt(this.getAttribute("type"), 10))) {
+      this.style.borderColor = "blue";
+      correctAnswer.push(parseInt(this.getAttribute("type"), 10));
+      if (correctAnswer.length === 3) {
+        matchNextButton.style.opacity = 1;
+        questionLeft--;
+      }
+    } else {
+      this.style.borderColor = "orange";
     }
-    moves++
-    if (correctAnswer.length != 3 && !correctAnswer.includes(parseInt(this.getAttribute("type"), 10))) {
-        if (keys[selectedBrand].includes(parseInt(this.getAttribute("type"), 10))) {
-            this.style.borderColor = 'chartreuse'
-            correctAnswer.push(parseInt(this.getAttribute("type"), 10))
-            if (correctAnswer.length === 3) {
-                matchNextButton.style.opacity = 1
-                questionLeft--
-            }
-        } else {
-            this.style.borderColor = 'red'
-        }
-    }
+  }
 }
 
 function congratulations() {
-
-    if (gameCompleted) {
-        clearInterval(interval);
-        ft = timer.innerHTML;
-        // score = moves * ((hour * 3600) + (minute * 60) + second)
-        // saveScore()
-        window.location.href = `congratulations.html?timer=${ft}`
-    }
+  if (gameCompleted) {
+    clearInterval(interval);
+    ft = timer.innerHTML;
+    // score = moves * ((hour * 3600) + (minute * 60) + second)
+    // saveScore()
+    window.location.href = `congratulations.html?timer=${ft}`;
+  }
 }
 
 async function saveScore() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://fb-api.ematicsolutions.com/elixus/customers", true);
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.send(JSON.stringify({ z: mh, y: mmi, x: ms, w: mmo, name, email }));
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            window.location.href = `congratulations.html?moves=${moves}&timer=${ft}`
-        }
-    };
+  var xhttp = new XMLHttpRequest();
+  xhttp.open(
+    "POST",
+    "https://fb-api.ematicsolutions.com/elixus/customers",
+    true
+  );
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.send(JSON.stringify({ z: mh, y: mmi, x: ms, w: mmo, name, email }));
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      window.location.href = `congratulations.html?moves=${moves}&timer=${ft}`;
+    }
+  };
 }
 
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////
-
-
 
 // @description congratulations when all cards match, show modal and moves, time and rating
 
 // @description toggles open and show class to display cards
 var displayCard = function () {
-    this.classList.toggle("open");
-    this.classList.toggle("show");
-    this.classList.toggle("disabled");
-    this.childNodes[0].classList.remove("hideImage");
-    this.childNodes[0].setAttribute('src', `raw/${map[this.getAttribute('type')]}.png`)
-
+  this.classList.toggle("open");
+  this.classList.toggle("show");
+  this.classList.toggle("disabled");
+  this.childNodes[0].classList.remove("hideImage");
+  this.childNodes[0].setAttribute(
+    "src",
+    `raw/${map[this.getAttribute("type")]}.png`
+  );
 };
 
 // @description add opened cards to OpenedCards list and check if cards are match or not
 function cardOpen() {
-    openedCards.push(this);
-    var len = openedCards.length;
-    if (len === 2) {
-        moveCounter();
+  openedCards.push(this);
+  var len = openedCards.length;
+  if (len === 2) {
+    moveCounter();
 
-        if (map[openedCards[0].getAttribute("type")] === map[openedCards[1].getAttribute("type")]) {
-            matched();
-        } else {
-            unmatched();
-        }
+    if (
+      map[openedCards[0].getAttribute("type")] ===
+      map[openedCards[1].getAttribute("type")]
+    ) {
+      matched();
+    } else {
+      unmatched();
     }
+  }
 }
 // async function addMoves() {
 //   let m = await decryptMessage(k, st)
@@ -282,28 +307,28 @@ function cardOpen() {
 // }
 // @description count player's moves
 async function moveCounter() {
-    moves++
-    mmo = cryptoEncrypt(parseInt(cryptoDecrypt(mmo), 10) + 1)
-    movesCounter.innerHTML = moves;
-    //start timer on first click
-    if (moves === 1) {
-        second = 0;
-        minute = 0;
-        hour = 0;
-        startTimer();
-    }
-    // // setting rates based on moves
-    // if (moves > 8 && moves < 12) {
-    //   for (i = 0; i < 3; i++) {
-    //     if (i > 1) {
-    //       stars[i].style.visibility = "collapse";
-    //     }
-    //   }
-    // } else if (moves > 13) {
-    //   for (i = 0; i < 3; i++) {
-    //     if (i > 0) {
-    //       stars[i].style.visibility = "collapse";
-    //     }
-    //   }
-    // }
+  moves++;
+  mmo = cryptoEncrypt(parseInt(cryptoDecrypt(mmo), 10) + 1);
+  movesCounter.innerHTML = moves;
+  //start timer on first click
+  if (moves === 1) {
+    second = 0;
+    minute = 0;
+    hour = 0;
+    startTimer();
+  }
+  // // setting rates based on moves
+  // if (moves > 8 && moves < 12) {
+  //   for (i = 0; i < 3; i++) {
+  //     if (i > 1) {
+  //       stars[i].style.visibility = "collapse";
+  //     }
+  //   }
+  // } else if (moves > 13) {
+  //   for (i = 0; i < 3; i++) {
+  //     if (i > 0) {
+  //       stars[i].style.visibility = "collapse";
+  //     }
+  //   }
+  // }
 }

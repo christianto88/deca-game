@@ -59,16 +59,10 @@
                             <a class="nav-link white-text" href="index.html">Match & Win </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link white-text" href="prizes.html">Prizes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="tnc.html">Terms and Conditions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link white-text" href="contactUs.html">Contact Us</a>
+                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
                         </li>
                     </ul>
                 </div>
@@ -82,26 +76,22 @@
                         <ul class="nav justify-content-center">
                             <li class="nav-item" style="margin:10px">
                                 <a href="#">
-                                    <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image"
-                                        >
+                                    <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                             <li class="nav-item" style="margin:10px">
                                 <a href="#">
-                                    <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image"
-                                        >
+                                    <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                             <li class="nav-item" style="margin:10px">
                                 <a href="#">
-                                    <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image"
-                                        >
+                                    <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                             <li class="nav-item" style="margin:10px">
                                 <a href="#">
-                                    <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image"
-                                        >
+                                    <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                         </ul>
@@ -119,26 +109,28 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container" style="height: 80vh;">
-            <div class="row align-items-center" style="height: 80vh;">
-                <div class="col-lg-6">
+            <div class="row" style="height: 80vh;">
+                <div class="col-lg-6" style="margin-top:40px">
                     <div class="text-center">
                         <img src="./raw/main-logo.png" class="img-fluid" alt="Responsive image">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="margin-top:40px">
                     <div class="text-center">
-                            <h3>Are you ready to challenge your brain?</h3>
+                        <h3>Are you ready to challenge your brain?</h3>
                         <div class="row" style="margin-top: 60px;">
                             <div class="col">
                                 <div class="text-center">
                                     <form onsubmit="saveData();return false" method="POST">
                                         <div class="form-group">
-                                            <input required placeholder="NAME" type="text" class="form-control myInput" type="text"
-                                                id="name" name="name" style="text-align: center;border-radius: 2rem;">
+                                            <input required placeholder="NAME" type="text" class="form-control myInput"
+                                                type="text" id="name" name="name"
+                                                style="text-align: center;border-radius: 2rem;">
                                         </div>
                                         <div class="form-group">
-                                            <input required type="email" id="emailInput" name="email" placeholder="EMAIL"
-                                                style="text-align: center;border-radius: 2rem" class="form-control myInput">
+                                            <input required type="email" id="emailInput" name="email"
+                                                placeholder="EMAIL" style="text-align: center;border-radius: 2rem"
+                                                class="form-control myInput">
                                             <div class="invalid-feedback">
                                                 Please provide a valid email.
                                             </div>
@@ -146,7 +138,8 @@
                                         <div class="text-center">
                                             <button type="submit" class="btn" id="submitBtn">
                                                 <div class="text-center">
-                                                    <img src="./raw/play-button.png" class=" img-fluid" alt="Responsive image">
+                                                    <img src="./raw/play-button.png" class=" img-fluid"
+                                                        alt="Responsive image">
                                                 </div>
                                             </button>
                                         </div>
@@ -158,9 +151,9 @@
                 </div>
             </div>
             <div class="row">
-                
+
             </div>
-           
+
 
         </div>
     </main>
@@ -190,26 +183,22 @@
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     <a href="#">
-                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image"
-                                           >
+                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     <a href="#">
-                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image"
-                                            >
+                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
                                     <a href="#">
-                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image"
-                                            >
+                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#">
-                                        <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image"
-                                            >
+                                        <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                             </ul>
@@ -231,14 +220,14 @@
 
         if (max700.matches || max1000.matches) {
             let content = document.getElementById('content')
-            let dropdownFooter=document.getElementById("dropdownFooter")
-            let footer=document.getElementById("bottomFooter")
-            footer.style.visibility='hidden'
+            let dropdownFooter = document.getElementById("dropdownFooter")
+            let footer = document.getElementById("bottomFooter")
+            footer.style.visibility = 'hidden'
             content.style.height = `${window.innerHeight - 196}px`
-            dropdownFooter.style.textAlign='center'
-            dropdownFooter.style.color='white'
-            dropdownFooter.style.height='150px'
-            dropdownFooter.style.visibility='visible'
+            dropdownFooter.style.textAlign = 'center'
+            dropdownFooter.style.color = 'white'
+            dropdownFooter.style.height = '150px'
+            dropdownFooter.style.visibility = 'visible'
         }
 
         // var xhttp = new XMLHttpRequest();
