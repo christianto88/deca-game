@@ -1,3 +1,5 @@
 15 sept
 - fixed prizes (desktop)
 - fixed instruction (desktop,mobile)
+17 sept
+- implement POST http request

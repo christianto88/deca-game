@@ -17,8 +17,8 @@ let mmo = 0;
 let ms = 0;
 let mmi = 0;
 let mh = 0;
-var email = localStorage.getItem("email");
-var name = localStorage.getItem("name");
+var email = sessionStorage.getItem("email");
+var name = sessionStorage.getItem("name");
 var score;
 let instructions, deck, movesCounter;
 // // @description game timer
@@ -73,6 +73,7 @@ let questionGame,
 let gameCompleted = false;
 let correctAnswer = [];
 let questionLeft = 1;
+let questionAnswer = "";
 function startTimer() {
   interval = setInterval(async function () {
     timer.innerHTML = minute + "mins " + second + "secs";
@@ -209,11 +210,18 @@ function questionButtonClick(t, bool) {
   // console.log(t)
   if (bool === true) {
     t.style.borderColor = "blue";
-    questionNextButton.style.opacity = 1;
-    gameCompleted = true;
+
+    if (questionAnswer === "") {
+      questionAnswer = "true";
+    }
   } else {
     t.style.borderColor = "orange";
+    if (questionAnswer === "") {
+      questionAnswer = "false";
+    }
   }
+  questionNextButton.style.opacity = 1;
+  gameCompleted = true;
 }
 function imageSelected() {
   if (moves === 0) {
@@ -245,8 +253,8 @@ function congratulations() {
     clearInterval(interval);
     ft = timer.innerHTML;
     // score = moves * ((hour * 3600) + (minute * 60) + second)
-    // saveScore()
-    window.location.href = `congratulations.html?timer=${ft}`;
+    saveScore();
+    // window.location.href = `congratulations.html?timer=${ft}`;
   }
 }
 
@@ -254,82 +262,26 @@ async function saveScore() {
   var xhttp = new XMLHttpRequest();
   xhttp.open(
     "POST",
-    "https://fb-api.ematicsolutions.com/elixus/customers",
+    "https://broonie.ematicsolutions.com/api/elixus/deca",
     true
   );
   xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.send(JSON.stringify({ z: mh, y: mmi, x: ms, w: mmo, name, email }));
+  xhttp.send(
+    JSON.stringify({
+      z: mh,
+      y: mmi,
+      x: ms,
+      w: mmo,
+      name,
+      email,
+      answer: questionAnswer
+    })
+  );
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      window.location.href = `congratulations.html?moves=${moves}&timer=${ft}`;
+      window.location.href = `congratulations.html?timer=${ft}`;
     }
   };
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
-
-// @description congratulations when all cards match, show modal and moves, time and rating
-
-// @description toggles open and show class to display cards
-var displayCard = function () {
-  this.classList.toggle("open");
-  this.classList.toggle("show");
-  this.classList.toggle("disabled");
-  this.childNodes[0].classList.remove("hideImage");
-  this.childNodes[0].setAttribute(
-    "src",
-    `raw/${map[this.getAttribute("type")]}.png`
-  );
-};
-
-// @description add opened cards to OpenedCards list and check if cards are match or not
-function cardOpen() {
-  openedCards.push(this);
-  var len = openedCards.length;
-  if (len === 2) {
-    moveCounter();
-
-    if (
-      map[openedCards[0].getAttribute("type")] ===
-      map[openedCards[1].getAttribute("type")]
-    ) {
-      matched();
-    } else {
-      unmatched();
-    }
-  }
-}
-// async function addMoves() {
-//   let m = await decryptMessage(k, st)
-//   let s = JSON.parse(m)
-//   s.moves = s.moves + 1
-
-//   st = await encryptMessage(k, JSON.stringify(s))
-// }
-// @description count player's moves
-async function moveCounter() {
-  moves++;
-  mmo = cryptoEncrypt(parseInt(cryptoDecrypt(mmo), 10) + 1);
-  movesCounter.innerHTML = moves;
-  //start timer on first click
-  if (moves === 1) {
-    second = 0;
-    minute = 0;
-    hour = 0;
-    startTimer();
-  }
-  // // setting rates based on moves
-  // if (moves > 8 && moves < 12) {
-  //   for (i = 0; i < 3; i++) {
-  //     if (i > 1) {
-  //       stars[i].style.visibility = "collapse";
-  //     }
-  //   }
-  // } else if (moves > 13) {
-  //   for (i = 0; i < 3; i++) {
-  //     if (i > 0) {
-  //       stars[i].style.visibility = "collapse";
-  //     }
-  //   }
-  // }
-}
