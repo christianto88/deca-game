@@ -255,7 +255,7 @@
             xhttp.open("GET", "https://broonie.ematicsolutions.com/api/elixus/deca?email=" + email, true);
             xhttp.send();
             xhttp.onreadystatechange = function () {
-                if (this.readyState == XMLHttpRequest.DONE && this.status !== 200) {
+                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
                     // alert('Please disable adblock to play this game')
                     console.log('this',this.responseText)
                 }

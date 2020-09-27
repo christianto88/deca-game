@@ -259,29 +259,31 @@ function congratulations() {
 }
 
 async function saveScore() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open(
-    "POST",
-    "https://broonie.ematicsolutions.com/api/elixus/deca",
-    true
-  );
-  xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.send(
-    JSON.stringify({
-      z: mh,
-      y: mmi,
-      x: ms,
-      w: mmo,
-      name,
-      email,
-      answer: questionAnswer
-    })
-  );
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      window.location.href = `congratulations.html?timer=${ft}`;
-    }
-  };
+  if (name && email) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open(
+      "POST",
+      "https://broonie.ematicsolutions.com/api/elixus/deca",
+      true
+    );
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(
+      JSON.stringify({
+        z: mh,
+        y: mmi,
+        x: ms,
+        w: mmo,
+        name,
+        email,
+        answer: questionAnswer
+      })
+    );
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        window.location.href = `congratulations.html?timer=${ft}`;
+      }
+    };
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
