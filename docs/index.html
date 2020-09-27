@@ -113,7 +113,9 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container" style="height: 80vh;">
+
             <div class="row" style="height: 80vh;">
+
                 <div class="col-lg-6" style="margin-top:40px">
                     <div class="text-center">
                         <img src="./raw/main-logo.png" class="img-fluid" alt="Responsive image">
@@ -135,8 +137,9 @@
                                             <input required type="email" id="emailInput" name="email"
                                                 placeholder="EMAIL" style="text-align: center;border-radius: 2rem"
                                                 class="form-control myInput">
-                                            <div class="invalid-feedback">
-                                                Please provide a valid email.
+                                            <div id="emailExist"
+                                                style="margin-top:0.25rem;color:red;font-weight:bold;font-size:80%">
+                                                Email already registered
                                             </div>
                                         </div>
                                         <div class="text-center">
@@ -147,6 +150,16 @@
                                                 </div>
                                             </button>
                                         </div>
+                                        <!-- <div class="text-center">
+                                            <div id="myAlert" class="alert alert-danger alert-dismissible fade"
+                                                role="alert">
+                                                <strong>Email address already registered!</strong>
+                                                <button type="button" class="close" data-dismiss="alert"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        </div> -->
                                     </form>
                                 </div>
                             </div>
@@ -219,6 +232,7 @@
 </body>
 <script>
     document.body.onload = function () {
+        document.getElementById('emailExist').style.visibility = 'hidden'
         let max700 = window.matchMedia("(max-width: 700px)")
         let max1000 = window.matchMedia("(max-width: 1000px)")
 
@@ -245,7 +259,7 @@
     }
     function saveData() {
         console.log('save')
-        // const email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+
         document.getElementById("submitBtn").disabled = true;
         var formElement = document.querySelector("form").elements;
         name = formElement[0].value
@@ -257,13 +271,18 @@
             xhttp.onreadystatechange = function () {
                 if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
                     // alert('Please disable adblock to play this game')
-                    console.log('this',this.responseText)
+                    console.log('this', this.responseText)
+                    if (this.responseText === 'not exist') {
+                        sessionStorage.setItem('name', name)
+                        sessionStorage.setItem('email', email)
+                        window.location.href = 'game.html'
+                    } else {
+                        document.getElementById('emailExist').style.visibility = 'visible'
+                    }
                 }
             };
         }
-        //  sessionStorage.setItem('name', name)
-        // sessionStorage.setItem('email', email)
-        // window.location.href = 'game.html'
+
 
 
     }
