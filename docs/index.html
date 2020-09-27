@@ -138,7 +138,7 @@
                                                 placeholder="EMAIL" style="text-align: center;border-radius: 2rem"
                                                 class="form-control myInput">
                                             <div id="emailExist"
-                                                style="margin-top:0.25rem;color:red;font-weight:bold;font-size:80%">
+                                                style="margin-top:0.25rem;color:red;font-weight:bold;font-size:80%;visibility: hidden;">
                                                 Email already registered
                                             </div>
                                         </div>
@@ -150,16 +150,6 @@
                                                 </div>
                                             </button>
                                         </div>
-                                        <!-- <div class="text-center">
-                                            <div id="myAlert" class="alert alert-danger alert-dismissible fade"
-                                                role="alert">
-                                                <strong>Email address already registered!</strong>
-                                                <button type="button" class="close" data-dismiss="alert"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                        </div> -->
                                     </form>
                                 </div>
                             </div>
@@ -270,7 +260,6 @@
             xhttp.send();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-                    // alert('Please disable adblock to play this game')
                     console.log('this', this.responseText)
                     if (this.responseText === 'not exist') {
                         sessionStorage.setItem('name', name)
@@ -282,9 +271,6 @@
                 }
             };
         }
-
-
-
     }
 </script>
 
