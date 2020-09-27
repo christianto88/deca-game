@@ -71,9 +71,9 @@ let questionGame,
   matchNextButton,
   questionNextButton;
 let gameCompleted = false;
-let correctAnswer = [];
-let questionLeft = 1;
-let questionAnswer = "";
+let correctAnswer = []; // array to hold correct answer selected by user in matching game
+let questionLeft = 3; // indicator how many question left for matching game
+let questionAnswer = ""; // hold answer for yes/no question
 function startTimer() {
   interval = setInterval(async function () {
     timer.innerHTML = minute + "mins " + second + "secs";
