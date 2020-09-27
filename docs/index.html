@@ -250,9 +250,21 @@
         var formElement = document.querySelector("form").elements;
         name = formElement[0].value
         email = formElement[1].value
-        sessionStorage.setItem('name', name)
-        sessionStorage.setItem('email', email)
-        window.location.href = 'game.html'
+        if (email && name) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "https://broonie.ematicsolutions.com/api/elixus/deca?email=" + email, true);
+            xhttp.send();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == XMLHttpRequest.DONE && this.status !== 200) {
+                    // alert('Please disable adblock to play this game')
+                    console.log('this',this.responseText)
+                }
+            };
+        }
+        //  sessionStorage.setItem('name', name)
+        // sessionStorage.setItem('email', email)
+        // window.location.href = 'game.html'
+
 
     }
 </script>
