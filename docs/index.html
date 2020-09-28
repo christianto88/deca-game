@@ -113,18 +113,19 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container" style="height: 80vh;">
-
-            <div class="row" style="height: 80vh;">
-
-                <div class="col-lg-6" style="margin-top:40px">
+            <div id="mainRow" class="row" style="height: 80vh;padding-top: 40px;">
+                <div id="logoDiv" class="col-lg-6">
                     <div class="text-center">
                         <img src="./raw/main-logo.png" class="img-fluid" alt="Responsive image">
                     </div>
+                    <div id="tentDiv" class="text-center">
+                        <img src="./raw/tent.png" class="img-fluid" alt="Responsive image">
+                    </div>
                 </div>
-                <div class="col-lg-6" style="margin-top:40px">
+                <div class="col-lg-6">
                     <div class="text-center">
                         <h3>Are you ready to challenge your brain?</h3>
-                        <div class="row" style="margin-top: 60px;">
+                        <div class="row" style="margin-top: 40px;">
                             <div class="col">
                                 <div class="text-center">
                                     <form onsubmit="saveData();return false" method="POST">
@@ -141,15 +142,19 @@
                                                 style="margin-top:0.25rem;color:red;font-weight:bold;font-size:80%;visibility: hidden;">
                                                 Email already registered
                                             </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn" id="submitBtn">
-                                                <div class="text-center">
-                                                    <img src="./raw/play-button.png" class=" img-fluid"
-                                                        alt="Responsive image">
-                                                </div>
-                                            </button>
-                                        </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn" id="submitBtn">
+                                                    <div class="text-center">
+                                                        <img src="./raw/play-button.png" class=" img-fluid"
+                                                            alt="Responsive image">
+                                                    </div>
+                                                    <div id="tentDivMobile" style="visibility: hidden;"
+                                                        class="text-center">
+                                                        <img src="./raw/tent.png" class=" img-fluid"
+                                                            alt="Responsive image">
+                                                    </div>
+                                                </button>
+                                            </div>
                                     </form>
                                 </div>
                             </div>
@@ -230,12 +235,18 @@
             let content = document.getElementById('content')
             let dropdownFooter = document.getElementById("dropdownFooter")
             let footer = document.getElementById("bottomFooter")
+            let mainRow = document.getElementById("mainRow")
+            let tentDiv = document.getElementById("tentDiv")
+            let tentDivMobile = document.getElementById("tentDivMobile")
             footer.style.visibility = 'hidden'
             content.style.height = `${window.innerHeight - 196}px`
             dropdownFooter.style.textAlign = 'center'
             dropdownFooter.style.color = 'white'
             dropdownFooter.style.height = '150px'
             dropdownFooter.style.visibility = 'visible'
+            tentDivMobile.style.visibility = 'visible'
+            tentDiv.remove()
+            mainRow.style.paddingTop = 0
         }
 
         // var xhttp = new XMLHttpRequest();

@@ -6,7 +6,7 @@
 // let cards = [...card];
 // let matchedCard = document.getElementsByClassName("match");
 let scoreData = [];
-let game = document.getElementById("game");
+let game = document.getElementById('game');
 let moves = 0;
 let map = {};
 let p = {};
@@ -17,8 +17,8 @@ let mmo = 0;
 let ms = 0;
 let mmi = 0;
 let mh = 0;
-var email = sessionStorage.getItem("email");
-var name = sessionStorage.getItem("name");
+var email = sessionStorage.getItem('email');
+var name = sessionStorage.getItem('name');
 var score;
 let instructions, deck, movesCounter;
 // // @description game timer
@@ -29,24 +29,24 @@ var timer;
 let interval;
 
 let brands = [
-  "artengo",
-  "domyos",
-  "geologic",
-  "kalenji",
-  "kipsta",
-  "nabaiji",
-  "oxelo",
-  "perfly",
-  "pongori",
-  "quechua",
-  "subea",
-  "tarmak"
+  'artengo',
+  'domyos',
+  'geologic',
+  'kalenji',
+  'kipsta',
+  'nabaiji',
+  'oxelo',
+  'perfly',
+  'pongori',
+  'quechua',
+  'subea',
+  'tarmak'
 ];
 // let brands = ['artengo', 'domyos', 'kalenji']
 const QUESTIONS = [
-  "Decathlon creates, designs, and manufactures his own products and has 40 brands each dedicated to one sport.",
-  "You can enjoy free shipping if you buy online at decathlon.my",
-  "Created in 1976 in the northern part of France, Decathlon is now established in 57 countries, including Malaysia since 2016 with 5 stores."
+  'Decathlon creates, designs, and manufactures his own products and has 40 brands each dedicated to one sport.',
+  'You can enjoy free shipping if you buy online at decathlon.my',
+  'Created in 1976 in the northern part of France, Decathlon is now established in 57 countries, including Malaysia since 2016 with 5 stores.'
 ];
 let keys = {
   artengo: [6, 4, 2],
@@ -72,11 +72,11 @@ let questionGame,
   questionNextButton;
 let gameCompleted = false;
 let correctAnswer = []; // array to hold correct answer selected by user in matching game
-let questionLeft = 3; // indicator how many question left for matching game
-let questionAnswer = ""; // hold answer for yes/no question
+let questionLeft = 1; // indicator how many question left for matching game
+let questionAnswer = ''; // hold answer for yes/no question
 function startTimer() {
   interval = setInterval(async function () {
-    timer.innerHTML = minute + "mins " + second + "secs";
+    timer.innerHTML = minute + 'mins ' + second + 'secs';
     second++;
     ms = cryptoEncrypt(parseInt(cryptoDecrypt(ms), 10) + 1);
 
@@ -97,14 +97,14 @@ function startTimer() {
 function cryptoEncrypt(string) {
   return CryptoJS.AES.encrypt(
     string.toString(),
-    "7c3f7400993e1c1e6ef80f0906c0966f"
+    '7c3f7400993e1c1e6ef80f0906c0966f'
   ).toString();
 }
 
 function cryptoDecrypt(string) {
   return CryptoJS.AES.decrypt(
     string,
-    "7c3f7400993e1c1e6ef80f0906c0966f"
+    '7c3f7400993e1c1e6ef80f0906c0966f'
   ).toString(CryptoJS.enc.Utf8);
 }
 
@@ -119,26 +119,26 @@ function getBrand() {
 
 document.body.onload = async function () {
   // SET RESPONSIVE
-  let max700 = window.matchMedia("(max-width: 700px)");
-  let max1000 = window.matchMedia("(max-width: 1000px)");
+  let max700 = window.matchMedia('(max-width: 700px)');
+  let max1000 = window.matchMedia('(max-width: 1000px)');
   if (max700.matches || max1000.matches) {
-    let content = document.getElementById("content");
-    let dropdownFooter = document.getElementById("dropdownFooter");
-    let footer = document.getElementById("bottomFooter");
-    footer.style.visibility = "hidden";
+    let content = document.getElementById('content');
+    let dropdownFooter = document.getElementById('dropdownFooter');
+    let footer = document.getElementById('bottomFooter');
+    footer.style.visibility = 'hidden';
     content.style.height = `${window.innerHeight - 196}px`;
-    dropdownFooter.style.textAlign = "center";
-    dropdownFooter.style.color = "white";
-    dropdownFooter.style.height = "150px";
-    dropdownFooter.style.visibility = "visible";
+    dropdownFooter.style.textAlign = 'center';
+    dropdownFooter.style.color = 'white';
+    dropdownFooter.style.height = '150px';
+    dropdownFooter.style.visibility = 'visible';
   }
 
-  matchGame = document.getElementById("matchGame");
-  questionGame = document.getElementById("questionGame");
-  brandLogo = document.getElementById("brandLogo");
-  instruction = document.getElementById("instruction");
-  matchNextButton = document.getElementById("matchGameNext");
-  questionNextButton = document.getElementById("questionGameNext");
+  matchGame = document.getElementById('matchGame');
+  questionGame = document.getElementById('questionGame');
+  brandLogo = document.getElementById('brandLogo');
+  instruction = document.getElementById('instruction');
+  matchNextButton = document.getElementById('matchGameNext');
+  questionNextButton = document.getElementById('questionGameNext');
 
   initGame();
   resetGame();
@@ -158,8 +158,8 @@ async function initGame() {
   second = 0;
   minute = 0;
   hour = 0;
-  timer = document.querySelector(".timer");
-  timer.innerHTML = "0 mins 0 secs";
+  timer = document.querySelector('.timer');
+  timer.innerHTML = '0 mins 0 secs';
   clearInterval(interval);
 }
 
@@ -177,23 +177,23 @@ function resetGame() {
       if (div.childNodes.length > 1) {
         div.removeChild(div.childNodes[1]);
       }
-      let img = document.createElement("img");
+      let img = document.createElement('img');
       img.src = `./raw/${selectedBrand}/${i}.png`;
-      img.classList.add("img-fluid");
-      img.classList.add("gameImg");
-      img.setAttribute("type", i.toString());
-      img.addEventListener("click", imageSelected);
+      img.classList.add('img-fluid');
+      img.classList.add('gameImg');
+      img.setAttribute('type', i.toString());
+      img.addEventListener('click', imageSelected);
       div.appendChild(img);
     }
   } else {
     const selectedQuestion =
       QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
-    let questionElement = document.getElementById("question");
+    let questionElement = document.getElementById('question');
     questionElement.innerHTML = selectedQuestion;
     brandLogo.src = `./raw/guess-logo.png`;
-    brandLogo.style.height = "150px";
-    questionGame.style.visibility = "visible";
-    matchGame.style.visibility = "hidden";
+    brandLogo.style.height = '150px';
+    questionGame.style.visibility = 'visible';
+    matchGame.style.visibility = 'hidden';
   }
 }
 function next() {
@@ -209,15 +209,15 @@ function next() {
 function questionButtonClick(t, bool) {
   // console.log(t)
   if (bool === true) {
-    t.style.borderColor = "blue";
+    t.style.borderColor = 'blue';
 
-    if (questionAnswer === "") {
-      questionAnswer = "true";
+    if (questionAnswer === '') {
+      questionAnswer = 'true';
     }
   } else {
-    t.style.borderColor = "orange";
-    if (questionAnswer === "") {
-      questionAnswer = "false";
+    t.style.borderColor = 'orange';
+    if (questionAnswer === '') {
+      questionAnswer = 'false';
     }
   }
   questionNextButton.style.opacity = 1;
@@ -233,17 +233,17 @@ function imageSelected() {
   moves++;
   if (
     correctAnswer.length != 3 &&
-    !correctAnswer.includes(parseInt(this.getAttribute("type"), 10))
+    !correctAnswer.includes(parseInt(this.getAttribute('type'), 10))
   ) {
-    if (keys[selectedBrand].includes(parseInt(this.getAttribute("type"), 10))) {
-      this.style.borderColor = "blue";
-      correctAnswer.push(parseInt(this.getAttribute("type"), 10));
+    if (keys[selectedBrand].includes(parseInt(this.getAttribute('type'), 10))) {
+      this.style.borderColor = 'blue';
+      correctAnswer.push(parseInt(this.getAttribute('type'), 10));
       if (correctAnswer.length === 3) {
         matchNextButton.style.opacity = 1;
         questionLeft--;
       }
     } else {
-      this.style.borderColor = "orange";
+      this.style.borderColor = 'orange';
     }
   }
 }
@@ -262,11 +262,11 @@ async function saveScore() {
   if (name && email) {
     var xhttp = new XMLHttpRequest();
     xhttp.open(
-      "POST",
-      "https://broonie.ematicsolutions.com/api/elixus/deca",
+      'POST',
+      'https://broonie.ematicsolutions.com/api/elixus/deca',
       true
     );
-    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send(
       JSON.stringify({
         z: mh,
