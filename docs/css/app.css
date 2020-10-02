@@ -11,7 +11,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .white-text {
   color: white !important;
@@ -176,7 +176,7 @@ h3 {
     margin-left: 0;
   }
   body {
-    overflow: hidden;
+    overflow-y: scroll;
     background-image: url("../raw/BG-instruction.png");
   }
   #game {
@@ -222,7 +222,7 @@ h3 {
 
   /* BODY STYLING */
   body {
-    overflow: hidden;
+    overflow-y: scroll;
     background-image: url("../raw/BG-instruction.png");
   }
   #instruction {
