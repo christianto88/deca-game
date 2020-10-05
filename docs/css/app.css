@@ -3,7 +3,7 @@
   src: url("../PoetsenOne-Regular.ttf");
 } */
 html {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   /* font-weight: "Condensed Bold"; */
   box-sizing: border-box;
   overflow: scroll;
@@ -19,7 +19,7 @@ html {
 }
 body {
   height: 100%;
-  background-image: url('../raw/BG-instruction.png');
+  background-image: url("../raw/BG-instruction.png");
   background-size: cover;
   overflow: hidden;
 }
@@ -177,7 +177,7 @@ h3 {
   }
   body {
     overflow-y: scroll;
-    background-image: url('../raw/BG-instruction.png');
+    background-image: url("../raw/BG-instruction.png");
   }
   #game {
     margin-top: 0;
@@ -223,7 +223,7 @@ h3 {
   /* BODY STYLING */
   body {
     overflow-y: scroll;
-    background-image: url('../raw/BG-instruction.png');
+    background-image: url("../raw/BG-instruction.png");
   }
   #instruction {
     font-size: 16px;
