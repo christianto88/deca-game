@@ -20,7 +20,7 @@ html {
 body {
   height: 100%;
   background-image: url("../raw/BG-instruction.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
 }
