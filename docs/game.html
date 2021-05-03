@@ -14,28 +14,14 @@
     <link rel="stylesheet" href="css/app.css">
 
 
-    <!-- <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+    <style>
+         body {
+            background-image: url("./raw/new-site/navbar-bg.png");
+            background-size: cover;
+            
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
         }
-
-        @media (max-width: 760px) {
-            .myImg {
-                height: 120px
-            }
-        }
-    </style> -->
+    </style>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -63,14 +49,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div id="content">
                     <ul class="navbar-nav mr-auto" id="navbarList">
+                         <li class="nav-item">
+                            <a class="nav-link yellow-text" href="index.html">PLAY NOW </a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="index.html">Match & Win </a>
+                            <a class="nav-link white-text" href="instructions.html">HOW DOES IT WORK?</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link white-text" href="prizes.html">Prizes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
+                            <a class="nav-link white-text" href="join-community.html">JOIN COMMUNITY GROUPS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="./raw/new-site/Mini-Games_T&C.pdf" target="_blank">TERM & CONDITIONS</a>
                         </li>
                     </ul>
                 </div>
@@ -112,54 +104,59 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container position-relative" id="game" style="color: white;">
-            <div class="row justify-content-between">
-                <div class="col"></div>
-                <div class="col" style="text-align:end ;">
-                    <img src="./raw/timer.png" class=" img-fluid" alt="Responsive image">
-                    <span style="margin-left: 20px; font-weight: bold;" class="timer" style="color: white;">0H 0M
-                        0S</span>
-                </div>
-
-
-            </div>
+            
             <div class="row position-absolute" id="brandLogoContainer">
-                <div class="col-12">
+                <div class="col-12" style="margin-top: 20px">
                     <div class="text-center">
-                        <img id="brandLogo" class="img-fluid" alt="Responsive image">
+                        <img id="logo" class="img-fluid" alt="Responsive image" style="margin-bottom: 10px; margin-top: 50px">
+                        
+
+                        <div class="col-lg-12 ">
+                            
+                            <div class="text-center" style="margin-top: 20px">
+                                <p style="color: yellow;text-transform: capitalize; font-size: 15px" id="instruction">
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
             </div>
             <div class="row position-absolute" id="questionGame">
-                <div class="col-12">
+                <div class="col-12" style="margin-top: 180px">
                     <div class="text-center">
                         <p style="margin-bottom: 20px;" id="question"></p>
                     </div>
                 </div>
-                <div class="col-6 text-right">
-                    <button onClick="questionButtonClick(this,true)"
-                        style="padding: 10px;border-radius: 10px;width: 75%;font-weight: bold;">TRUE</button>
+                <div class="col-6 text-center">
+                        <button onClick='questionButtonClick(this,true)' style="background:url('./raw/new-site/true.png');background-size: 159px 135px;height: 135px;width: 159px;border: none;border-radius: 8px; margin-left: -40px" class="" alt="Responsive image">
+
                 </div>
-                <div class="col-6">
-                    <button onClick="questionButtonClick(this,false)"
-                        style="padding: 10px;border-radius: 10px;width: 75%;font-weight: bold;">FALSE</button>
+                <div class="col-6 text-center">
+                        <button onClick='questionButtonClick(this,false)' style="background:url('./raw/new-site/false.png');background-size: 159px 135px;height: 135px;width: 159px;border: none;border-radius: 8px;" class="" alt="Responsive image" style="">
+
                 </div>
                 <div class="col-12 justify-content-center">
                     <div class="text-center" style="margin-top: 20px;" id="questionGameNext">
-                        <img onClick='next()' src="./raw/next-button.png" class=" img-fluid" alt="Responsive image">
+                        <img onClick='next()' src="./raw/new-site/next-btn.png" class=" img-fluid" alt="Responsive image">
+
                     </div>
                 </div>
             </div>
 
             <div class="row mb-4" id="matchGame">
-                <div class="col-12 mb-2">
+                <div class="col-12" style="margin-top: 90px">
                     <div class="text-center">
-                        <p style="color: yellow;text-transform: capitalize;font-weight: bolder ;" id="instruction">
+                        <p style="color: white;text-transform: capitalize;font-weight: bolder ;font-style: italic;font-size: 35px" id="brandLogo">
                     </div>
                 </div>
+                
 
                 <div class="col-lg-4 col-6">
-                    <div class="text-center" id="image1">
+                    <div class="cover">
+                    <div class="text-center" id="image1" >
+                    </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-6">
@@ -185,13 +182,24 @@
                 </div>
                 <div class="col-12 justify-content-center">
                     <div class="text-center" id="matchGameNext">
-                        <img onClick='next()' src="./raw/next-button.png" class=" img-fluid" alt="Responsive image">
+                        <img onClick='next()' src="./raw/new-site/next-btn.png" class=" img-fluid" alt="Responsive image">
                     </div>
                 </div>
             </div>
+            
+
 
         </div>
+<div class="row justify-content-between">
+                <div class="col">
+                    <img src="./raw/new-site/timer.png" class=" img-fluid" alt="Responsive image">
+                    <span style="margin-left: 10px; font-weight: bold;" class="timer" style="color: white;">0H 0M
+                        0S</span>
+                </div>
+                <img src="./raw/new-site/ketupat.svg" class="img-fluid-ketupat" style="width: 80px" alt="Responsive image">
 
+
+            </div>
         <!-- <div class="row justify-content-center">
             <div class="col" style="text-align: right;place-self: center;">Score to beat</div>
             <div class="col" style="text-align: left; ">
@@ -207,6 +215,7 @@
 
         </div> -->
         </div>
+
         </div>
     </main>
 
@@ -234,17 +243,17 @@
                                     Stay connected
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="#">
+                                    <a href="https://www.facebook.com/DecathlonMalaysia/">
                                         <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="#">
+                                    <a href="https://www.instagram.com/decathlon.my/?hl=en">
                                         <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="#">
+                                    <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
                                         <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>

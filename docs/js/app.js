@@ -29,38 +29,38 @@ var timer;
 let interval;
 
 let brands = [
-  'artengo',
-  'domyos',
-  'geologic',
-  'kalenji',
-  'kipsta',
-  'nabaiji',
-  'oxelo',
-  'perfly',
-  'pongori',
-  'quechua',
-  'subea',
-  'tarmak'
+  'FITNESS CARDIO',
+  'CYCLING',
+  'HIKING',
+  'BADMINTON',
+  'BODY BUILDING',
+  'PILATES',
+  'SKATE',
+  'SWIMMING',
+  'YOGA',
+  'RUNNING',
+  'CROSS TRAINING',
+  'SCOOTER'
 ];
 // let brands = ['artengo', 'domyos', 'kalenji']
 const QUESTIONS = [
-  'Decathlon creates, designs, and manufactures his own products and has 40 brands each dedicated to one sport.',
-  'You can enjoy free shipping if you buy online at decathlon.my',
-  'Created in 1976 in the northern part of France, Decathlon is now established in 57 countries, including Malaysia since 2016 with 5 stores.'
+  'Decathlon Petaling Jaya is the latest Decathlon Store that was opened in late December 2020.',
+  'The new Fresh & Black innovation for Quechua tents is made to ensure campers are able to enjoy their good night sleep with a cooler temperature and excellent ventilation system.',
+  "Easybreath is the world's first full-face snorkeling mask, innovated by Decathlon where you can enjoy the panoramic field of vision and breathe underwater just like on dry land."
 ];
 let keys = {
-  artengo: [6, 4, 2],
-  domyos: [2, 3, 6],
-  geologic: [3, 5, 1],
-  kalenji: [3, 5, 6],
-  kipsta: [1, 6, 4],
-  nabaiji: [1, 5, 2],
-  oxelo: [2, 4, 6],
-  perfly: [5, 4, 2],
-  pongori: [6, 1, 3],
-  quechua: [3, 2, 6],
-  subea: [6, 5, 3],
-  tarmak: [1, 5, 3]
+  'FITNESS CARDIO': [2, 3, 4],
+  'CYCLING': [2, 4, 5],
+  'HIKING': [3, 4, 6],
+  'BADMINTON': [1, 2, 5],
+  'BODY BUILDING': [1, 4, 5],
+  'PILATES': [1, 3, 6],
+  'SKATE': [2, 4, 6],
+  'SWIMMING': [3, 4, 6],
+  'YOGA': [1, 2, 5],
+  'RUNNING': [2, 4, 5],
+  'CROSS TRAINING': [3, 4, 6],
+  'SCOOTER': [1, 3, 6]
 };
 
 let questionGame,
@@ -135,6 +135,7 @@ document.body.onload = async function () {
 
   matchGame = document.getElementById('matchGame');
   questionGame = document.getElementById('questionGame');
+  covers = document.getElementById('covers');
   brandLogo = document.getElementById('brandLogo');
   instruction = document.getElementById('instruction');
   matchNextButton = document.getElementById('matchGameNext');
@@ -170,18 +171,20 @@ function resetGame() {
   questionNextButton.style.opacity = 0.2;
 
   if (selectedBrand) {
-    brandLogo.src = `./raw/${selectedBrand}/brand-logo.png`;
-    instruction.innerHTML = `MATCH THREE (3) IMAGES WITH THE BRAND ${selectedBrand.toUpperCase()}`;
+    logo.src = `./raw/new-site/decathlon-logo.png`;
+    instruction.innerHTML = `WHAT ARE THREE (3) ESSENTIALS FOR`;
+    brandLogo.innerHTML = `${selectedBrand.toUpperCase()}`;
     for (let i = 1; i < 7; i++) {
       const div = document.getElementById(`image${i}`);
       if (div.childNodes.length > 1) {
         div.removeChild(div.childNodes[1]);
       }
-      let img = document.createElement('img');
-      img.src = `./raw/${selectedBrand}/${i}.png`;
+      let img = document.createElement('button');
+      img.src = `./raw/new-site/${selectedBrand}/${i}.png`;
       img.classList.add('img-fluid');
       img.classList.add('gameImg');
       img.setAttribute('type', i.toString());
+      img.setAttribute('style', "background: " +`url('./raw/new-site/${selectedBrand}/${i}.png')`+";background-size: 170px 200px;height: 200px;width: 170px;border: none;margin-left:-20px;margin-right: -20px");
       img.addEventListener('click', imageSelected);
       div.appendChild(img);
     }
@@ -190,13 +193,15 @@ function resetGame() {
       QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
     let questionElement = document.getElementById('question');
     questionElement.innerHTML = selectedQuestion;
-    brandLogo.src = `./raw/guess-logo.png`;
+    logo.src = `./raw/new-site/logo.png`;
     brandLogo.style.height = '150px';
     questionGame.style.visibility = 'visible';
     matchGame.style.visibility = 'hidden';
+    instruction.style.visibility = 'hidden';
   }
 }
 function next() {
+
   if (gameCompleted) {
     congratulations();
   } else {
@@ -207,15 +212,24 @@ function next() {
 }
 
 function questionButtonClick(t, bool) {
-  // console.log(t)
   if (bool === true) {
-    t.style.borderColor = 'blue';
+    t.style.background ="linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/true.png";
+      t.style.height= '135px';
+    t.style.width= '159px';
+    t.style.border= 'none';
+    t.style.backgroundSize= '159px 135px';
 
     if (questionAnswer === '') {
       questionAnswer = 'true';
     }
   } else {
-    t.style.borderColor = 'orange';
+    t.style.background ="linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/false.png";
+      t.style.height= '135px';
+    t.style.width= '159px';
+    t.style.border= 'none';
+    t.style.backgroundSize= '159px 135px';
+
+
     if (questionAnswer === '') {
       questionAnswer = 'false';
     }
@@ -236,14 +250,25 @@ function imageSelected() {
     !correctAnswer.includes(parseInt(this.getAttribute('type'), 10))
   ) {
     if (keys[selectedBrand].includes(parseInt(this.getAttribute('type'), 10))) {
-      this.style.borderColor = 'blue';
+      
+      this.style.background ="linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/"+selectedBrand+"/"+this.getAttribute('type')+'.png';
+      this.style.height= '200px';
+    this.style.width= '170px';
+    this.style.border= 'none';
+    this.style.backgroundSize= '170px 200px';
+    
       correctAnswer.push(parseInt(this.getAttribute('type'), 10));
       if (correctAnswer.length === 3) {
         matchNextButton.style.opacity = 1;
         questionLeft--;
       }
     } else {
-      this.style.borderColor = 'orange';
+      this.style.opacity = '0.8';
+      this.style.background ="linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/"+selectedBrand+"/"+this.getAttribute('type')+'.png';
+      this.style.height= '200px';
+    this.style.width= '170px';
+    this.style.border= 'none';
+    this.style.backgroundSize= '170px 200px';
     }
   }
 }

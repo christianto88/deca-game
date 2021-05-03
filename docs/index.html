@@ -31,7 +31,7 @@
         }
 
         body {
-            background-image: url("./raw/BG-10.png");
+            background-image: url("./raw/new-site/background.png");
         }
     </style>
 </head>
@@ -60,16 +60,24 @@
                 <div id="content">
                     <ul class="navbar-nav mr-auto" id="navbarList">
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="index.html">Match & Win </a>
+                            <a class="nav-link yellow-text" href="index.html">PLAY NOW </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="instructions.html">HOW DOES IT WORK?</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link white-text" href="prizes.html">Prizes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white-text" href="instructions.html">How does it work ?</a>
+                            <a class="nav-link white-text" href="join-community.html">JOIN COMMUNITY GROUPS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" href="./raw/new-site/Mini-Games_T&C.pdf" target="_blank">TERM & CONDITIONS</a>
                         </li>
                     </ul>
                 </div>
+                            <img src="./raw/new-site/ketupat.svg" class="img-fluid-ketupat" style="width: 80px" alt="Responsive image">
+
 
                 <div id="dropdownFooter" style="visibility: hidden;">
                     <div>
@@ -79,29 +87,24 @@
                     <div>
                         <ul class="nav justify-content-center">
                             <li class="nav-item" style="margin:10px">
-                                <a href="#">
+                                <a href="https://www.facebook.com/DecathlonMalaysia/">
                                     <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                             <li class="nav-item" style="margin:10px">
-                                <a href="#">
+                                <a href="https://www.instagram.com/decathlon.my/?hl=en">
                                     <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                             <li class="nav-item" style="margin:10px">
-                                <a href="#">
+                                <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
                                     <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                            <li class="nav-item" style="margin:10px">
-                                <a href="#">
-                                    <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        Copyright &copy; ABC All right reserved
+                        Copyright &copy; Elixus All right reserved
 
                     </div>
                 </div>
@@ -112,29 +115,34 @@
 
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
-        <div class="container" style="height: 80vh; max-width:1440px">
+        <div class="container" style="height: 53vh; max-width:1440px">
             <div id="mainRow" class="row" style="height: 80vh;padding-top: 40px;">
                 <div id="logoDiv" class="col-lg-6">
                     <div class="text-center">
-                        <img src="./raw/masthead.png" class="img-fluid" alt="Responsive image">
+                        <img src="./raw/new-site/logo.png" class="img-fluid" alt="Responsive image">
                     </div>
                     <div id="tentDiv" class="text-center">
-                        <img src="./raw/maintent.png" class="img-fluid" alt="Responsive image">
+                        <img src="./raw/new-site/logo-mid.png" class="img-fluid mid-logo" alt="Responsive image" ></br>
+
+                        <img src="./raw/new-site/home-banner.png" class="img-fluid" alt="Responsive image">
+
                     </div>
+                    
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="margin-top: 40px;">
                     <div class="text-center">
                         <h3>Are you ready to challenge your brain?</h3>
                         <div class="row" style="margin-top: 40px;">
                             <div class="col">
                                 <div class="text-center">
                                     <form onsubmit="saveData();return false" method="POST">
-                                        <div class="form-group">
+
+                                        <div class="form-group-registration">
                                             <input required placeholder="NAME" type="text" class="form-control myInput"
                                                 type="text" id="name" name="name"
                                                 style="text-align: center;border-radius: 2rem;">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-registration">
                                             <input required type="email" id="emailInput" name="email"
                                                 placeholder="EMAIL" style="text-align: center;border-radius: 2rem"
                                                 class="form-control myInput">
@@ -145,16 +153,13 @@
                                             <div class="text-center">
                                                 <button type="submit" class="btn" id="submitBtn">
                                                     <div class="text-center">
-                                                        <img src="./raw/play-button.png" class=" img-fluid"
+                                                        <img src="./raw/new-site/play-button.png" class=" img-fluid"
                                                             alt="Responsive image">
                                                     </div>
-                                                    <div id="tentDivMobile" style="visibility: hidden;"
-                                                        class="text-center">
-                                                        <img src="./raw/maintent.png" class=" img-fluid"
-                                                            alt="Responsive image">
-                                                    </div>
+                                                    
                                                 </button>
                                             </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -162,8 +167,15 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-
+            <div class="col-lg-12">
+                <div id="tentDivMobile" style="visibility: hidden;"
+                        class="text-center">
+                        <img src="./raw/new-site/logo-mid.png" class="img-fluid mid-logo-mobile" alt="Responsive image" width="350" style="margin-top: -280px;margin-bottom: -140px">
+                    <img src="./raw/new-site/home-banner.png" class=" img-fluid"
+                        alt="Responsive image">
+                    <img src="./raw/new-site/ketupat.svg" class="img-fluid-ketupat-mobile"
+                            alt="Responsive image">
+                </div>
             </div>
 
 
@@ -184,7 +196,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-12 col-md-12  nav-link" style="place-self:center;text-align: center;">
-                    Copyright &copy; ABC All right reserved
+                    Copyright &copy; Elixus All right reserved
                 </div>
                 <div class="col-lg-4 col-sm-12 col-md-12 nav-link" style="padding:0">
                     <div class="row">
@@ -194,22 +206,24 @@
                                     Stay connected
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="#">
+                                    <a href="https://www.facebook.com/DecathlonMalaysia/">
                                         <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="#">
+                                    <a href="https://www.instagram.com/decathlon.my/?hl=en">
                                         <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                                 <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="#">
+                                    <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
                                         <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
                                     </a>
                                 </li>
                             </ul>
 
+                        </div>
+                        <div id="tentDiv" class="text-center">
                         </div>
 
                     </div>
