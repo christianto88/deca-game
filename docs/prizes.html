@@ -1,71 +1,76 @@
 <!doctype html>
-<html lang="en" class="h-100">
-
-<head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Decathlon Mini Game</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
 
+    <!-- Bootstrap core CSS -->
+    
+<link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style/jumbotron.css" rel="stylesheet">
 
     <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-        body {
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      body {
             background-image: url("./raw/new-site/navbar-bg.png");
-            background-size: cover;
-            color: white;
+            overflow: scroll;
         }
     </style>
-</head>
+    <!-- Custom styles for this template -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
 
-<body class="d-flex flex-column h-100">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" style="border: none;color:white">
+                        <span class="navbar-toggler-icon" style="color:white;"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <div id="Navbarcontent">
 
-    <header>
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                style="border: none;color:white">
-                <span class="navbar-toggler-icon" style="color:white"></span>
-            </button>
+              <ul class="navbar-nav mr-auto" id="navbarList">
+                <li class="nav-item">
+                    <a class="nav-link yellow-text" href="index.html">PLAY NOW </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white-text" href="instructions.html">HOW DOES IT WORK?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white-text" href="prizes.html">PRIZES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white-text" href="join-community.html">JOIN COMMUNITY GROUPS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white-text" href="./raw/new-site/Mini-Games_T&C.pdf" target="_blank">TERM & CONDITIONS</a>
+                </li>
+              </ul>
+            </div>
+            
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div id="content">
-                    <ul class="navbar-nav mr-auto" id="navbarList">
-                        <li class="nav-item">
-                            <a class="nav-link yellow-text" href="index.html">PLAY NOW </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link white-text" href="instructions.html">HOW DOES IT WORK?</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link white-text" href="prizes.html">Prizes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link white-text" href="join-community.html">JOIN COMMUNITY GROUPS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link white-text" href="./raw/new-site/Mini-Games_T&C.pdf" target="_blank">TERM & CONDITIONS</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="dropdownFooter" style="visibility: hidden;">
+          </div>
+        </nav>
+    <div id="dropdownFooter" style="visibility: hidden;">
                     <div>
                         Stay Connected
 
@@ -73,147 +78,182 @@
                     <div>
                         <ul class="nav justify-content-center">
                             <li class="nav-item" style="margin:10px">
-                                <a href="#">
+                                <a href="https://www.facebook.com/DecathlonMalaysia/">
                                     <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                             <li class="nav-item" style="margin:10px">
-                                <a href="#">
+                                <a href="https://www.instagram.com/decathlon.my/?hl=en">
                                     <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                             <li class="nav-item" style="margin:10px">
-                                <a href="#">
+                                <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
                                     <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                            <li class="nav-item" style="margin:10px">
-                                <a href="#">
-                                    <img src="./raw/twitter.png" class=" img-fluid" alt="Responsive image">
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        Copyright &copy; ABC All right reserved
+                        Copyright &copy; Elixus All right reserved
 
                     </div>
                 </div>
 
-            </div>
-        </nav>
-    </header>
+  </div>
+</nav>
 
-    <!-- Begin page content -->
-    <main role="main">
-        <div class="container" id="prizeContainer">
-            <div class="row justify-content-center">
-                <div class="text-center">
-                    <img src="./raw/decathlon-congrats.png" class="img-fluid " alt="Responsive image">
-                </div>
-            </div>
-            <div class="row justify-content-center" style="margin-top: 20px; margin-bottom: 20px;">
-                <div class="text-center">
-                    <h2 style="font: italic;">PRIZES TO BE WON!</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <img id="prizeImg" src="./raw/new-site/prizes.png" style="width: 357px; height: 544px" class="img-fluid " alt="Responsive image">
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="text-center">
-                        <a href="index.html">
-                            <img style="width: 200px;" src="./raw/new-site/play-button.png" alt="Responsive image">
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
+<main role="main">
+    <div class="container"> 
+        <div class="text-center">
+            <img src="./raw/new-site/decathlon-logo.png" class="img-fluid " alt="Responsive image">
+            <p style="color: yellow;text-transform: capitalize; font-size: 15px" id="instruction">
         </div>
-    </main>
-
-
-    <footer id="bottomFooter" class="footer mt-auto py-3">
-        <div class="container-fluid">
-            <div class="row">
-                <div class=" col-lg-4 col-sm-12 col-md-12 justify-content-center" style="place-self:center;">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link">Terms and condition</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-sm-12 col-md-12  nav-link" style="place-self:center;text-align: center;">
-                    Copyright &copy; Elixus All right reserved
-                </div>
-                <div class="col-lg-4 col-sm-12 col-md-12 nav-link" style="padding:0">
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-md-12">
-                            <ul class="nav justify-content-center">
-                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    Stay connected
-                                </li>
-                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="https://www.facebook.com/DecathlonMalaysia/">
-                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
-                                    </a>
-                                </li>
-                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="https://www.instagram.com/decathlon.my/?hl=en">
-                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
-                                    </a>
-                                </li>
-                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                                    <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
-                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
+        <div class="col-12">
+            <div class="text-center">
+                <p style="margin-bottom: 20px; font-family: 'Roboto', sans-serif; color: #FFFFFF; text-transform: uppercase;opacity: 1;text-align: center; font:italic normal bold 28px/23px Roboto;text-shadow: 2px 2px 3px #00000061;">PRIZES TO BE WON!</p>
             </div>
         </div>
-    </footer>
-</body>
-<script>
-    document.body.onload = function () {
-        let max700 = window.matchMedia("(max-width: 700px)")
-        let max1000 = window.matchMedia("(max-width: 1000px)")
+        <div class="row">
+          <div class="col">
+            <p style="margin-bottom: 20px; color: #FFCE3A; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 27px/32px Roboto;text-shadow: 2px 2px 3px #00000061;">GRAND PRIZE</p>
+            <p style="margin-bottom: 20px;, sans-serif; color: #FFFFFF; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 14px/16px Roboto;letter-spacing: 0px;">Domyos Essential Exercise Bike (RM499)</p>
+          </div>
+          <div class="col"></br><p style="; color: #FFCE3A; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 27px/32px Roboto;text-shadow: 2px 2px 3px #00000061;">2nd Runner Up</p>
+            <p style="margin-bottom: 20px;, sans-serif; color: #FFFFFF; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 14px/16px Roboto;letter-spacing: 0px;">Arpenaz MH100 Fresh & Black Camping Tent (rm279)</p></div>
+        </div>
+        <div class="row" style="margin-top: -20px">
+          <div class="col-8">
+            <div class="row">
+              <div class="col-sm-9 prize-row">
+                <img src="./raw/new-site/star-left.png" class="img-fluid " alt="Responsive image">
+                <div class="row">
+                  <div class="col-8 col-sm-6">
+                                        <img src="./raw/new-site/grandprize.png" alt="Responsive image" class="prize-img">
 
-        if (max700.matches || max1000.matches) {
-            let content = document.getElementById('content')
-            let dropdownFooter = document.getElementById("dropdownFooter")
-            let footer = document.getElementById("bottomFooter")
-            let prizeImg = document.getElementById("prizeImg")
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="row">
+              <div class="col-sm-9">
+                <div class="row">
+                  <div class="col-8 col-sm-6">
+                                        <img src="./raw/new-site/runnerup.png" alt="Responsive image" class="prize-img-runnerup">
 
-            footer.style.visibility = 'hidden'
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            
+          </div>
+          <div class="col"></br><p style="; color: #FFCE3A; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 20px/32px Roboto;text-shadow: 2px 2px 3px #00000061;margin-bottom: 0px">3nd Runner Up</p>
+            <p style="margin-bottom: 20px;, sans-serif; color: #FFFFFF; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 12px/16px Roboto;letter-spacing: 0px;">Geologic Softarchery Set (rm169)</p></div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="row">
 
-            content.style.height = `${window.innerHeight - 196}px`
+              <div class="col-sm-12 prize-row">
+                <img src="./raw/new-site/star-left.png" class="img-fluid " alt="Responsive image">
+                <div class="row">
+                  <div class="col-8 col-sm-6">
+                                        <img src="./raw/new-site/consolation.png" alt="Responsive image" class="prize-img">
 
-            dropdownFooter.style.textAlign = 'center'
-            dropdownFooter.style.color = 'white'
-            dropdownFooter.style.height = '150px'
-            dropdownFooter.style.visibility = 'visible'
+                  </div>
+                </div>
+              </div>
 
-            prizeImg.src = './raw/prizes-mobile.png'
-        }
-    }
-</script>
-<style>
-    @media (max-width: 760px) {
-        .myImg {
-            width: 150px;
-        }
-    }
-</style>
+              <div class="col-sm-8 consolation">
+                <p style="color: #FFCE3A; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 16px/32px Roboto;text-shadow: 2px 2px 3px #00000061;margin-bottom: 0">Consolation PRIZES</p>
+                <p style="color: #FFFFFF; text-transform: uppercase;opacity: 1;text-align: center; font: normal normal bold 11px/16px Roboto;letter-spacing: 0px;">RM20 Gift Card</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-4 consolation">
+            <div class="row">
+              <div class="col-sm-9">
+                <div class="row">
+                  <div class="col-8 col-sm-6">
+                                        <img src="./raw/new-site/3rd.png" alt="Responsive image" class="thirdwinner">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+</main>
+
+<footer class="container">
+  <div class="container-fluid">
+      <div class="row">
+          <div class=" col-lg-4 col-sm-12 col-md-12 justify-content-center" style="place-self:center;">
+              <ul class="nav justify-content-center">
+                  <li class="nav-item">
+                      <a class="nav-link" href="./raw/new-site/Mini-Games_T&C.pdf" target="_blank">Terms and condition</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link">Contact Us</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12 col-md-12  nav-link" style="place-self:center;text-align: center;">
+              Copyright &copy; Elixus All right reserved
+          </div>
+          <div class="col-lg-4 col-sm-12 col-md-12 nav-link" style="place-self:center;text-align: center;">
+              <div class="row">
+                  <div class="col-lg-12 col-sm-12 col-md-12">
+                      <ul class="nav justify-content-center">
+                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                              Stay connected
+                          </li>
+                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                              <a href="https://www.facebook.com/DecathlonMalaysia/">
+                                  <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                              </a>
+                          </li>
+                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                              <a href="https://www.instagram.com/decathlon.my/?hl=en">
+                                  <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                              </a>
+                          </li>
+                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                              <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
+                                  <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
+                              </a>
+                          </li>
+                      </ul>
+
+                  </div>
+                  <div id="tentDiv" class="text-center">
+                  </div>
+
+              </div>
+
+          </div>
+      </div>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="./dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        $(function () {
+  $(document).scroll(function () {
+    var $nav = $(".fixed-top");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+      </script>
 
 </html>
