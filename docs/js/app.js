@@ -44,7 +44,7 @@ let brands = [
 ];
 // let brands = ['artengo', 'domyos', 'kalenji']
 const QUESTIONS = [
-  //  'Decathlon Petaling Jaya is the latest Decathlon Store that was opened in late December 2020.',
+//  'Decathlon Petaling Jaya is the latest Decathlon Store that was opened in late December 2020.',
   'The new Fresh & Black innovation for Quechua tents is made to ensure campers are able to enjoy their good night sleep with a cooler temperature and excellent ventilation system.',
   "Easybreath is the world's first full-face snorkeling mask, innovated by Decathlon where you can enjoy the panoramic field of vision and breathe underwater just like on dry land."
 ];
@@ -57,7 +57,7 @@ let keys = {
   'PILATES': [1, 3, 6],
   'SKATE': [2, 4, 6],
   'SWIMMING': [3, 4, 6],
-  'YOGA': [1, 2, 5],
+   'YOGA': [1, 2, 5],
   'RUNNING': [2, 4, 5],
   'CROSS TRAINING': [3, 4, 6],
   'SCOOTER': [1, 3, 6]
@@ -122,13 +122,13 @@ window.onload = async function () {
   let max700 = window.matchMedia('(max-width: 700px)');
   let max1000 = window.matchMedia('(max-width: 1000px)');
   if (max700.matches || max1000.matches) {
-    let dropdownFooter = document.getElementById('dropdownFooter');
-    let footer = document.getElementById('bottomFooter');
-    footer.style.visibility = 'hidden';
-    dropdownFooter.style.textAlign = 'center';
-    dropdownFooter.style.color = 'white';
-    dropdownFooter.style.height = '150px';
-    dropdownFooter.style.visibility = 'visible';
+    // let dropdownFooter = document.getElementById('dropdownFooter');
+    // let footer = document.getElementById('bottomFooter');
+    // footer.style.visibility = 'hidden';
+    // dropdownFooter.style.textAlign = 'center';
+    // dropdownFooter.style.color = 'white';
+    // dropdownFooter.style.height = '150px';
+    // dropdownFooter.style.visibility = 'visible';
   }
 
   matchGame = document.getElementById('matchGame');
@@ -179,10 +179,10 @@ function resetGame() {
       let img = document.getElementById(`image${i}`);
       img.src = `./raw/new-site/${selectedBrand}/${i}.png`;
       img.setAttribute('type', i.toString());
-      img.setAttribute('style', "background: " + `url('./raw/new-site/${selectedBrand}/${i}.png') no-repeat padding-box;` + "background-size: contain;height: 139px; margin: 30px");
+            img.setAttribute('style', "background: " +`url('./raw/new-site/${selectedBrand}/${i}.jpg') no-repeat padding-box;`+"background-size: cover;background-position-x: center;height: 139px; margin: 30px");
 
       img.addEventListener('click', imageSelected);
-
+      
     }
   } else {
     const selectedQuestion =
@@ -208,19 +208,19 @@ function next() {
 
 function questionButtonClick(t, bool) {
   if (bool === true) {
-    t.style.background = "linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/true.png";
-
-    t.style.border = 'none';
-
+    t.style.background ="linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/true.png";
+    
+    t.style.border= 'none';
+    
     if (questionAnswer === '') {
       questionAnswer = 'true';
     }
   } else {
-    t.style.background = "linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/false.png";
-    t.style.height = '135px';
-    t.style.width = '159px';
-    t.style.border = 'none';
-    t.style.backgroundSize = '159px 135px';
+    t.style.background ="linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/false.png";
+      t.style.height= '135px';
+    t.style.width= '159px';
+    t.style.border= 'none';
+    t.style.backgroundSize= '159px 135px';
 
 
     if (questionAnswer === '') {
@@ -244,12 +244,14 @@ function imageSelected() {
   ) {
     if (keys[selectedBrand].includes(parseInt(this.getAttribute('type'), 10))) {
 
+      
+      this.style.background ="no-repeat linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/"+selectedBrand+"/"+this.getAttribute('type')+'.jpg';
+      this.style.height= '139px';
 
-      this.style.background = "linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/" + selectedBrand + "/" + this.getAttribute('type') + '.png';
-
-      this.style.border = 'none';
-      this.style.backgroundSize = 'contain';
-
+    this.style.border= 'none';
+    this.style.backgroundSize= 'cover';
+    this.style.backgroundPositionX= 'center';
+    
       correctAnswer.push(parseInt(this.getAttribute('type'), 10));
       if (correctAnswer.length === 3) {
         matchNextButton.style.opacity = 1;
@@ -257,10 +259,13 @@ function imageSelected() {
       }
     } else {
       this.style.opacity = '0.8';
-      this.style.background = "linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/" + selectedBrand + "/" + this.getAttribute('type') + '.png';
+      this.style.background ="linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/"+selectedBrand+"/"+this.getAttribute('type')+'.jpg';
+            this.style.height= '139px';
 
-      this.style.border = 'none';
-      this.style.backgroundSize = 'contain';
+    this.style.border= 'none';
+    this.style.backgroundSize= 'cover';
+    this.style.backgroundPositionX= 'center';
+
     }
   }
 }

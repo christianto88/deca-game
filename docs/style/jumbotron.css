@@ -95,6 +95,10 @@ body {
 .thirdwinner{
 		width: 230px;
 	}
+
+.nav-link{
+	color: white;
+}
 /* RESPONSIVE STYLING  */
 @media (max-width: 1000px) {
   /* NAVBAR STYLING */
@@ -162,7 +166,12 @@ background-image: url("../raw/new-site/navbar-bg.png")!important;
 	.prize-img-runnerup{
 		width: 290px
 	}
+.game-image{
+  	width: 162px;
+  	border-radius: 20px;
+  	/*margin: 10px;*/
 
+  }
 
 }
 
@@ -217,9 +226,9 @@ background-image: url("../raw/new-site/navbar-bg.png")!important;
   }
 
   .game-image{
-  	width: 141px;
+  	width: 142px;
   	border-radius: 20px;
-  	margin: 10px;
+  	/*margin: 10px;*/
 
   }
 
