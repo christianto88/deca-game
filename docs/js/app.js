@@ -29,37 +29,37 @@ var timer;
 let interval;
 
 let brands = [
-  // 'FITNESS CARDIO',
-  // 'CYCLING',
-  // 'HIKING',
-  // 'BADMINTON',
-  // 'BODY BUILDING',
-  // 'PILATES',
-  // 'SKATE',
-  // 'SWIMMING',
-  // 'YOGA',
-  // 'RUNNING',
-  // 'CROSS TRAINING',
+  'FITNESS CARDIO',
+  'CYCLING',
+  'HIKING',
+  'BADMINTON',
+  'BODY BUILDING',
+  'PILATES',
+  'SKATE',
+  'SWIMMING',
+  'YOGA',
+  'RUNNING',
+  'CROSS TRAINING',
   'SCOOTER'
 ];
 // let brands = ['artengo', 'domyos', 'kalenji']
 const QUESTIONS = [
-//  'Decathlon Petaling Jaya is the latest Decathlon Store that was opened in late December 2020.',
+  //  'Decathlon Petaling Jaya is the latest Decathlon Store that was opened in late December 2020.',
   'The new Fresh & Black innovation for Quechua tents is made to ensure campers are able to enjoy their good night sleep with a cooler temperature and excellent ventilation system.',
   "Easybreath is the world's first full-face snorkeling mask, innovated by Decathlon where you can enjoy the panoramic field of vision and breathe underwater just like on dry land."
 ];
 let keys = {
-//   'FITNESS CARDIO': [2, 3, 4],
-//   'CYCLING': [2, 4, 5],
-//   'HIKING': [3, 4, 6],
-//   'BADMINTON': [1, 2, 5],
-//   'BODY BUILDING': [1, 4, 5],
-//   'PILATES': [1, 3, 6],
-//   'SKATE': [2, 4, 6],
-//   'SWIMMING': [3, 4, 6],
-// //   'YOGA': [1, 2, 5],
-//   'RUNNING': [2, 4, 5],
-//   'CROSS TRAINING': [3, 4, 6],
+  'FITNESS CARDIO': [2, 3, 4],
+  'CYCLING': [2, 4, 5],
+  'HIKING': [3, 4, 6],
+  'BADMINTON': [1, 2, 5],
+  'BODY BUILDING': [1, 4, 5],
+  'PILATES': [1, 3, 6],
+  'SKATE': [2, 4, 6],
+  'SWIMMING': [3, 4, 6],
+  'YOGA': [1, 2, 5],
+  'RUNNING': [2, 4, 5],
+  'CROSS TRAINING': [3, 4, 6],
   'SCOOTER': [1, 3, 6]
 };
 
@@ -179,10 +179,10 @@ function resetGame() {
       let img = document.getElementById(`image${i}`);
       img.src = `./raw/new-site/${selectedBrand}/${i}.png`;
       img.setAttribute('type', i.toString());
-            img.setAttribute('style', "background: " +`url('./raw/new-site/${selectedBrand}/${i}.png') no-repeat padding-box;`+"background-size: contain;height: 139px; margin: 30px");
+      img.setAttribute('style', "background: " + `url('./raw/new-site/${selectedBrand}/${i}.png') no-repeat padding-box;` + "background-size: contain;height: 139px; margin: 30px");
 
       img.addEventListener('click', imageSelected);
-      
+
     }
   } else {
     const selectedQuestion =
@@ -208,19 +208,19 @@ function next() {
 
 function questionButtonClick(t, bool) {
   if (bool === true) {
-    t.style.background ="linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/true.png";
-    
-    t.style.border= 'none';
-    
+    t.style.background = "linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/true.png";
+
+    t.style.border = 'none';
+
     if (questionAnswer === '') {
       questionAnswer = 'true';
     }
   } else {
-    t.style.background ="linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/false.png";
-      t.style.height= '135px';
-    t.style.width= '159px';
-    t.style.border= 'none';
-    t.style.backgroundSize= '159px 135px';
+    t.style.background = "linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/false.png";
+    t.style.height = '135px';
+    t.style.width = '159px';
+    t.style.border = 'none';
+    t.style.backgroundSize = '159px 135px';
 
 
     if (questionAnswer === '') {
@@ -244,12 +244,12 @@ function imageSelected() {
   ) {
     if (keys[selectedBrand].includes(parseInt(this.getAttribute('type'), 10))) {
 
-      
-      this.style.background ="linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/"+selectedBrand+"/"+this.getAttribute('type')+'.png';
-      
-    this.style.border= 'none';
-    this.style.backgroundSize= 'contain';
-    
+
+      this.style.background = "linear-gradient( rgba(35, 169, 66, 0.48), rgba(35, 169, 66, 0.48) ), url('./raw/new-site/" + selectedBrand + "/" + this.getAttribute('type') + '.png';
+
+      this.style.border = 'none';
+      this.style.backgroundSize = 'contain';
+
       correctAnswer.push(parseInt(this.getAttribute('type'), 10));
       if (correctAnswer.length === 3) {
         matchNextButton.style.opacity = 1;
@@ -257,10 +257,10 @@ function imageSelected() {
       }
     } else {
       this.style.opacity = '0.8';
-      this.style.background ="linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/"+selectedBrand+"/"+this.getAttribute('type')+'.png';
-      
-    this.style.border= 'none';
-    this.style.backgroundSize= 'contain';
+      this.style.background = "linear-gradient( rgba(227, 44, 38, 0.48), rgba(227, 44, 38, 0.48) ), url('./raw/new-site/" + selectedBrand + "/" + this.getAttribute('type') + '.png';
+
+      this.style.border = 'none';
+      this.style.backgroundSize = 'contain';
     }
   }
 }
