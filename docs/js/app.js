@@ -169,7 +169,7 @@ function resetGame() {
   questionNextButton.style.opacity = 0.2;
 
   if (selectedBrand) {
-    instruction.innerHTML = `WHAT ARE THREE (3) ESSENTIELS FOR`;
+    instruction.innerHTML = `WHAT ARE THREE (3) ESSENTIALS FOR`;
     brandLogo.innerHTML = `${selectedBrand.toUpperCase()}`;
     for (let i = 1; i < 7; i++) {
       const div = document.getElementById(`image${i}`);
