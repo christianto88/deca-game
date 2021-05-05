@@ -1,4 +1,7 @@
 /* Move down content because we have a fixed navbar that is 3.5rem tall */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   padding-top: 3.5rem;
   height: 100%;
@@ -99,6 +102,10 @@ body {
 .nav-link{
 	color: white;
 }
+
+.timer{
+	color: white
+}
 /* RESPONSIVE STYLING  */
 @media (max-width: 1000px) {
   /* NAVBAR STYLING */
@@ -172,6 +179,10 @@ background-image: url("../raw/new-site/navbar-bg.png")!important;
   	/*margin: 10px;*/
 
   }
+
+.timer{
+	color: white
+}
 
 }
 
@@ -252,5 +263,10 @@ background-image: url("../raw/new-site/navbar-bg.png")!important;
 	.thirdwinner{
 		width: 142px;
 	}
+
+
+.timer{
+	color: white
+}
 
 }
