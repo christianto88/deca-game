@@ -150,6 +150,14 @@ body {
 .timer{
 	color: white
 }
+
+
+.align-right{
+	text-align: right;
+}.align-left{
+	text-align: left;
+}
+
 /* RESPONSIVE STYLING  */
 @media (max-width: 1000px) {
   /* NAVBAR STYLING */
@@ -311,6 +319,11 @@ background-image: url("../raw/new-site/navbar-bg.png")!important;
 
 .timer{
 	color: white
+}
+.align-right{
+	text-align: center;
+}.align-left{
+	text-align: center;
 }
 
 }
