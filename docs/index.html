@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -11,222 +12,232 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
 
     <!-- Bootstrap core CSS -->
-<link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-      }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="./style/jumbotron.css" rel="stylesheet">
-<!--          <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--          <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet"> -->
 
 
-  </head>
-  <body>
+</head>
+
+<body>
 
     <div id="dropdownFooter" style="visibility: hidden;">
-                    <div>
-                        Stay Connected
+        <div>
+            Stay Connected
 
-                    </div>
-                    <div>
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item" style="margin:10px">
-                                <a href="https://www.facebook.com/DecathlonMalaysia/">
-                                    <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                            <li class="nav-item" style="margin:10px">
-                                <a href="https://www.instagram.com/decathlon.my/?hl=en">
-                                    <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                            <li class="nav-item" style="margin:10px">
-                                <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
-                                    <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        Copyright &copy; Elixus All right reserved
-
-                    </div>
-     </div>
-
- 
-
-<main role="main">
-  <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-6">
-        <div class="text-center">
-            <img src="./raw/new-site/logo.png" class="img-fluid" alt="Responsive image" style="height: 240px">
         </div>
-        <div class="text-center">
-            <h2 style="font-family: 'Roboto', sans-serif; color: #FFFFFF; text-transform: uppercase;opacity: 1;text-align: center; font:italic normal bold 32px/35px Roboto;text-shadow: 2px 2px 3px #00000061;">ARE YOU READY FOR THE CHALLENGE?</h2>
-        </div><br>
-        <form onsubmit="saveData();return false" method="POST">
-            <div class="form-group-registration">
-                <input required placeholder="NAME" type="text" class="form-control myInput"
-                    type="text" id="name" name="name"
-                    style="text-align: center;border-radius: 2rem;">
-            </div>
-            <div class="form-group-registration mt-2">
-                <input required type="email" id="emailInput" name="email"
-                    placeholder="EMAIL" style="text-align: center;border-radius: 2rem"
-                    class="form-control myInput">
-                <div id="emailExist"
-                    style="margin-top:0.25rem;color:red;font-weight:bold;font-size:80%;visibility: hidden;">
-                    Email already registered
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn" id="submitBtn">
-                        <div class="text-center">
-                            <img src="./raw/new-site/play-button.png" class=" img-fluid"
-                                alt="Responsive image" style="width: 167px;height: 60px;">
-                        </div>
-                        
-                    </button>
-                </div>
-            </div>
-        </form>
-      </div>
-      <div class="col-md-6">
-        <img src="./raw/new-site/logo-mid.png" class="img-fluid mid-logo" alt="Responsive image">
-        <img src="./raw/new-site/great-prizes.png" class="img-fluid mid-logo" alt="Responsive image" style="margin-top: -70px">
+        <div>
+            <ul class="nav justify-content-center">
+                <li class="nav-item" style="margin:10px">
+                    <a href="https://www.facebook.com/DecathlonMalaysia/">
+                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                    </a>
+                </li>
+                <li class="nav-item" style="margin:10px">
+                    <a href="https://www.instagram.com/decathlon.my/?hl=en">
+                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                    </a>
+                </li>
+                <li class="nav-item" style="margin:10px">
+                    <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
+                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            Copyright &copy; Elixus All right reserved
+
+        </div>
     </div>
 
-    <hr>
 
-  </div> <!-- /container -->
 
-</main>
-<div id="dropdownFooter" style="visibility: hidden;">
-                    <div>
-                        Stay Connected
+    <main role="main">
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <img src="./raw/new-site/logo.png" class="img-fluid" alt="Responsive image"
+                            style="height: 240px">
+                    </div>
+                    <div class="text-center">
+                        <h2
+                            style="font-family: 'Roboto', sans-serif; color: #FFFFFF; text-transform: uppercase;opacity: 1;text-align: center; font:italic normal bold 32px/35px Roboto;text-shadow: 2px 2px 3px #00000061;">
+                            ARE YOU READY FOR THE CHALLENGE?</h2>
+                    </div><br>
+                    <form onsubmit="saveData();return false" method="POST">
+                        <div class="form-group-registration">
+                            <input required placeholder="NAME" type="text" class="form-control myInput" type="text"
+                                id="name" name="name" style="text-align: center;border-radius: 2rem;">
+                        </div>
+                        <div class="form-group-registration mt-2">
+                            <input required type="email" id="emailInput" name="email" placeholder="EMAIL"
+                                style="text-align: center;border-radius: 2rem" class="form-control myInput">
+                            <div id="emailExist"
+                                style="margin-top:0.25rem;color:red;font-weight:bold;font-size:80%;visibility: hidden;">
+                                Email already registered
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn" id="submitBtn">
+                                    <div class="text-center">
+                                        <img src="./raw/new-site/play-button.png" class=" img-fluid"
+                                            alt="Responsive image" style="width: 167px;height: 60px;">
+                                    </div>
+
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <img src="./raw/new-site/logo-mid.png" class="img-fluid mid-logo" alt="Responsive image">
+                    <img src="./raw/new-site/great-prizes.png" class="img-fluid mid-logo" alt="Responsive image"
+                        style="margin-top: -70px">
+                </div>
+
+                <hr>
+
+            </div> <!-- /container -->
+
+    </main>
+    <div id="dropdownFooter" style="visibility: hidden;">
+        <div>
+            Stay Connected
+
+        </div>
+        <div>
+            <ul class="nav justify-content-center">
+                <li class="nav-item" style="margin:10px">
+                    <a href="https://www.facebook.com/DecathlonMalaysia/">
+                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                    </a>
+                </li>
+                <li class="nav-item" style="margin:10px">
+                    <a href="https://www.instagram.com/decathlon.my/?hl=en">
+                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                    </a>
+                </li>
+                <li class="nav-item" style="margin:10px">
+                    <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
+                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            Copyright &copy; Elixus All right reserved
+
+        </div>
+    </div>
+
+    <footer class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-lg-4 col-sm-12 col-md-12 justify-content-center" style="place-self:center;">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./raw/new-site/Mini-Games_T&C.pdf" target="_blank">Terms and
+                                conditions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.decathlon.my/contact-us" target="_blank">Contact
+                                Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-12  nav-link" style="place-self:center;text-align: center;">
+                    Copyright &copy; Elixus All right reserved
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-12 nav-link" style="place-self:center;text-align: center;">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-md-12">
+                            <ul class="nav justify-content-center">
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    Stay connected
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="https://www.facebook.com/DecathlonMalaysia/">
+                                        <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="https://www.instagram.com/decathlon.my/?hl=en">
+                                        <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                                <li class="nav-item" style="align-self: center; margin-right: 12px;">
+                                    <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
+                                        <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div id="tentDiv" class="text-center">
+                        </div>
 
                     </div>
-                    <div>
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item" style="margin:10px">
-                                <a href="https://www.facebook.com/DecathlonMalaysia/">
-                                    <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                            <li class="nav-item" style="margin:10px">
-                                <a href="https://www.instagram.com/decathlon.my/?hl=en">
-                                    <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                            <li class="nav-item" style="margin:10px">
-                                <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
-                                    <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        Copyright &copy; Elixus All right reserved
 
-                    </div>
-     </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="./dist/js/bootstrap.bundle.min.js"></script>
 
-<footer class="container">
-  <div class="container-fluid">
-      <div class="row">
-          <div class=" col-lg-4 col-sm-12 col-md-12 justify-content-center" style="place-self:center;">
-              <ul class="nav justify-content-center">
-                  <li class="nav-item">
-                      <a class="nav-link" href="./raw/new-site/Mini-Games_T&C.pdf" target="_blank">Terms and conditions</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="https://www.decathlon.my/contact-us" target="_blank">Contact Us</a>
-                  </li>
-              </ul>
-          </div>
-          <div class="col-lg-4 col-sm-12 col-md-12  nav-link" style="place-self:center;text-align: center;">
-              Copyright &copy; Elixus All right reserved
-          </div>
-          <div class="col-lg-4 col-sm-12 col-md-12 nav-link" style="place-self:center;text-align: center;">
-              <div class="row">
-                  <div class="col-lg-12 col-sm-12 col-md-12">
-                      <ul class="nav justify-content-center">
-                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                              Stay connected
-                          </li>
-                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                              <a href="https://www.facebook.com/DecathlonMalaysia/">
-                                  <img src="./raw/fb.png" class=" img-fluid" alt="Responsive image">
-                              </a>
-                          </li>
-                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                              <a href="https://www.instagram.com/decathlon.my/?hl=en">
-                                  <img src="./raw/instagram.png" class=" img-fluid" alt="Responsive image">
-                              </a>
-                          </li>
-                          <li class="nav-item" style="align-self: center; margin-right: 12px;">
-                              <a href="https://www.youtube.com/channel/UCkmvVOiW-2KFZb8CRGQjJww">
-                                  <img src="./raw/youtube.png" class=" img-fluid" alt="Responsive image">
-                              </a>
-                          </li>
-                      </ul>
+    <script type="text/javascript">
+        function saveData() {
+            console.log('save')
+            window.location.href = 'instructions.html'
+            // document.getElementById("submitBtn").disabled = true;
+            // var formElement = document.querySelector("form").elements;
+            // name = formElement[0].value
+            // email = formElement[1].value
 
-                  </div>
-                  <div id="tentDiv" class="text-center">
-                  </div>
+            // if (email && name) {
+            //     var xhttp = new XMLHttpRequest();
+            //     xhttp.open("GET", "https://broonie.ematicsolutions.com/api/elixus/deca?email=" + email, true);
+            //     xhttp.send();
+            //     xhttp.onreadystatechange = function () {
+            //         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+            //             console.log('this', this.responseText)
+            //             if (this.responseText === 'not exist') {
+            //                 sessionStorage.setItem('name', name)
+            //                 sessionStorage.setItem('email', email)
+            //                 window.location.href = 'instructions.html'
+            //             } else {
+            //                 document.getElementById('emailExist').style.visibility = 'visible'
+            //                 document.getElementById("submitBtn").disabled = false;
 
-              </div>
-
-          </div>
-      </div>
-  </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="./dist/js/bootstrap.bundle.min.js"></script>
-
-<script type="text/javascript">
-  function saveData() {
-        console.log('save')
-
-        document.getElementById("submitBtn").disabled = true;
-        var formElement = document.querySelector("form").elements;
-        name = formElement[0].value
-        email = formElement[1].value
-        if (email && name) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "https://broonie.ematicsolutions.com/api/elixus/deca?email=" + email, true);
-            xhttp.send();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-                    console.log('this', this.responseText)
-                    if (this.responseText === 'not exist') {
-                        sessionStorage.setItem('name', name)
-                        sessionStorage.setItem('email', email)
-                        window.location.href = 'instructions.html'
-                    } else {
-                        document.getElementById('emailExist').style.visibility = 'visible'
-                        document.getElementById("submitBtn").disabled = false;
-
-                    }
-                }
-            };
+            //             }
+            //         }
+            //     };
+            // }
         }
-    }
-</script>
+    </script>
+
 </html>
